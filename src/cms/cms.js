@@ -1,4 +1,4 @@
-import CMS from 'netlify-cms-app'
+import CMS from "netlify-cms-app";
 
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 
