@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react"
 import Header from "../components/header"
-import Layout from "../components/Layout.js"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import { withStyles } from '@material-ui/core/styles'
 import GridList from '@material-ui/core/GridList'
