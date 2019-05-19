@@ -6,6 +6,8 @@
   "author": "Mearat Hou <mearatjames@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "@material-ui/styles": "^3.0.0-alpha.10",
     "gatsby": "^2.5.0",
     "gatsby-image": "^2.1.0",
     "gatsby-plugin-manifest": "^2.1.1",
@@ -23,7 +25,9 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-swipeable-views": "^0.13.3",
+    "react-swipeable-views-utils": "^0.13.3"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
