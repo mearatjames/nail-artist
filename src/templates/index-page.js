@@ -4,10 +4,12 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-export const IndexPageTemplate = ({ title }) => (
+export const IndexPageTemplate = ({ title, heading, subheading }) => (
   <div>
     <h1>Test</h1>
     <h1>{title}</h1>
+    <h1>{heading}</h1>
+    <h1>{subheading}</h1>
   </div>
 )
 
@@ -22,6 +24,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         title={frontmatter.title}
+        heading={frontmatter.heading}
+        subheading={frontmatter.subheading}
       />
     </Layout>
   )
@@ -42,6 +46,8 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        heading
+        subheading
       }
     }
   }
