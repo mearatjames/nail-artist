@@ -4,10 +4,9 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-export const IndexPageTemplate = ({
-  title
-}) => (
+export const IndexPageTemplate = ({ title }) => (
   <div>
+    <h1>Test</h1>
     <h1>{title}</h1>
   </div>
 )
