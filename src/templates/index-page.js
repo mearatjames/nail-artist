@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-
+import SEO from '../components/seo'
 import Layout from '../components/Layout'
+import Fab from '../components/fab'
 
 export const IndexPageTemplate = ({ title, heading, subheading }) => (
   <div>
@@ -10,6 +11,7 @@ export const IndexPageTemplate = ({ title, heading, subheading }) => (
     <h1>{title}</h1>
     <h1>{heading}</h1>
     <h1>{subheading}</h1>
+    <Fab />
   </div>
 )
 
@@ -21,13 +23,16 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout>
-      <IndexPageTemplate
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-      />
-    </Layout>
+    <React.Fragment>
+      <SEO />
+      <Layout>
+        <IndexPageTemplate
+          title={frontmatter.title}
+          heading={frontmatter.heading}
+          subheading={frontmatter.subheading}
+        />
+      </Layout>
+    </React.Fragment>
   )
 }
 

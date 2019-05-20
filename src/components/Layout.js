@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import "./Layout.css"
 import Footer from './footer'
 import NavBar from './nav'
-import Carousel from './carousel'
+// import Carousel from './carousel'
 
 const Layout = ({ children }) => (
         
@@ -22,7 +22,7 @@ const Layout = ({ children }) => (
         >
           <NavBar />
           <main>{children}</main>
-          <Carousel />
+          {/* <Carousel /> */}
           <Footer />
         </div>
 )
