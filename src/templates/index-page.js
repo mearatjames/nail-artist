@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import Fab from '../components/fab'
+import Booking from '../components/booking'
 
 export const IndexPageTemplate = ({ title, heading, subheading }) => (
   <div>
@@ -21,6 +22,7 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
+  
 
   return (
     <React.Fragment>
@@ -31,6 +33,7 @@ const IndexPage = ({ data }) => {
           heading={frontmatter.heading}
           subheading={frontmatter.subheading}
         />
+      <Booking />
       </Layout>
     </React.Fragment>
   )
