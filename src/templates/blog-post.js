@@ -7,6 +7,8 @@ import Fab from "../components/fab"
 import Booking from "../components/booking"
 import Content, { HTMLContent } from '../components/content'
 import Helmet from 'react-helmet'
+import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography';
 
 export const BlogPostTemplate = ({ 
     content,
@@ -19,9 +21,15 @@ export const BlogPostTemplate = ({
     const PostContent = contentComponent || Content
 
     return (
-        <div>
+        <Grid container style={{margin: '0 auto', maxWidth: '768px', width: '80%'}}>
+            <Typography component="h4" variant="h3" gutterBottom>
+                {title}
+            </Typography>
+            <Typography color='textSecondary' variant="subtitle1" gutterBottom>
+                {description}
+            </Typography>
             <PostContent content={content} />
-        </div>
+        </Grid>
     )
 }
   
