@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Layout from "../components/Layout"
 import Fab from "../components/fab"
 import Booking from "../components/booking"
-import Content, { HTMLContent } from '../components/Content'
+import Content, { HTMLContent } from '../components/content'
 import Helmet from 'react-helmet'
 
 export const BlogPostTemplate = ({ 
