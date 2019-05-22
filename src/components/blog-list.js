@@ -6,6 +6,7 @@ import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const styles = {
   card: {
@@ -27,36 +28,30 @@ const styles = {
 
 function SimpleCard(props) {
   const { classes } = props
-  const bull = <span className={classes.bullet}>•</span>
+  const { frontmatter } = props.post
 
   return (
     <Card className={classes.card}>
+      {console.log(props.post)}
       <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be
-          {bull}
-          nev
-          {bull}o{bull}
-          lent
+      <PreviewCompatibleImage
+            imageInfo={{
+              image: props.post.frontmatter.featuredimage,
+              alt: `featured image thumbnail for post ${props.post.title}`,
+            }}
+          />
+        <Typography variant="headline" component="display3">
+          {frontmatter.title}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+          {frontmatter.date}
         </Typography>
         <Typography component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          {props.post.excerpt}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button href={props.post.fields.slug} size="small">Read More</Button>
       </CardActions>
     </Card>
   )

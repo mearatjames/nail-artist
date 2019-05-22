@@ -20,6 +20,7 @@
     "gatsby-plugin-sharp": "^2.0.37",
     "gatsby-remark-copy-linked-files": "^2.0.12",
     "gatsby-remark-images": "^3.0.11",
+    "gatsby-remark-relative-images": "^0.2.2",
     "gatsby-source-filesystem": "^2.0.36",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.19",
@@ -39,15 +40,17 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
-    "prettier": "^1.17.1"
+    "prettier": "^1.17.1",
+    "rimraf": "^2.6.2"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf .cache public",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "npm run clean && gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
