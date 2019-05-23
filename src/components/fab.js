@@ -23,7 +23,7 @@ function FloatingActionButtons(props) {
   return (
     <div className={classes.igButton}>
       <Fab href="https://www.instagram.com/aiai.91/" color="secondary" aria-label="Add" className={classes.fab}>
-        <i class="fab fa-instagram fa-2x"></i>
+        <i className="fab fa-instagram fa-2x"></i>
       </Fab>
     </div>
   );

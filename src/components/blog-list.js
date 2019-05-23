@@ -33,7 +33,6 @@ function SimpleCard(props) {
 
   return (
     <Card className={classes.card}>
-      {console.log(props.post)}
       <CardContent>
       <PreviewCompatibleImage
             imageInfo={{
@@ -41,7 +40,7 @@ function SimpleCard(props) {
               alt: `featured image thumbnail for post ${props.post.title}`,
             }}
           />
-        <Typography variant="headline" component="display3">
+        <Typography variant="h4" component="h3">
           {frontmatter.title}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">

@@ -9,7 +9,7 @@ const styles = theme => ({
     textAlign: 'center',
     alignItems: 'center',
     display: 'grid',
-    position: 'absolute',
+    position: 'relative',
     bottom: 0,
     left: 0,
     width: '100%'
