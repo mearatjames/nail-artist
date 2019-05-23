@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
     <React.Fragment>
       <SEO />
       <Layout>
-        <Jumbotron />
+        <Jumbotron header="Aspiring Nail Artist" />
         <IndexPageTemplate
           title={frontmatter.title}
           heading={frontmatter.heading}

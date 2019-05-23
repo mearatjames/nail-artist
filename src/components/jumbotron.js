@@ -34,7 +34,7 @@ class Jumbotron extends Component {
               AiAi91
             </Typography>
             <Typography variant="h6">
-              Aspiring Nail Artist
+                {this.props.header}
             </Typography>
           </div>
         </Grid>
