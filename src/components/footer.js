@@ -15,7 +15,8 @@ const styles = theme => ({
     width: '100%'
   },
   footerText: {
-
+    textDecoration: 'none',
+    color: 'black'
   },
   admin: {
     textDecoration: 'none',
@@ -34,16 +35,16 @@ return (
     <div className={classes.footer}>
       <div>
           <Link
-            to="/admin"
+            to="/admin/"
             className={classes.admin}
           >
             Admin
           </Link>
       </div>
-      <div className={classes.footerText}>
+      <div>
           © {new Date().getFullYear()}, Powered by
           {` `}
-          <a href="https://www.mearat.com">Mearat</a>
+          <a className={classes.footerText} href="https://www.mearat.com">Mearat</a>
       </div>
     </div>
   </footer>
