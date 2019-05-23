@@ -1,32 +1,53 @@
 import { Link } from "gatsby"
 import React from "react"
+import { withStyles } from '@material-ui/core/styles';
 
-const Footer = () => (
+const styles = theme => ({
+  footer: {
+    backgroundColor: '#F5F5F5',
+    height: 80,
+    textAlign: 'center',
+    alignItems: 'center',
+    display: 'grid',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: '100%'
+  },
+  footerText: {
+
+  },
+  admin: {
+    textDecoration: 'none',
+    color: 'black',
+    paddingTop: 20,
+
+  }
+});
+
+const Footer = (props) => {
+
+  const { classes } = props;
+
+return (
   <footer>
-    <div
-      style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/admin/"
-          style={{
-              textDecoration: `none`,
-            }}
-        >
-          Admin
-        </Link>
-      </h1>
-    </div>
-    <div>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+    <div className={classes.footer}>
+      <div>
+          <Link
+            to="/admin"
+            className={classes.admin}
+          >
+            Admin
+          </Link>
+      </div>
+      <div className={classes.footerText}>
+          © {new Date().getFullYear()}, Powered by
+          {` `}
+          <a href="https://www.mearat.com">Mearat</a>
+      </div>
     </div>
   </footer>
 )
+}
 
-export default Footer
+export default withStyles(styles)(Footer)

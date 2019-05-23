@@ -10,12 +10,18 @@ const styles = theme => ({
   extendedIcon: {
     marginRight: theme.spacing.unit,
   },
+  igButton: {
+    position: 'fixed',
+    right: 15,
+    bottom: 20,
+    zIndex: 1000
+  }
 });
 
 function FloatingActionButtons(props) {
   const { classes } = props;
   return (
-    <div>
+    <div className={classes.igButton}>
       <Fab href="https://www.instagram.com/aiai.91/" color="secondary" aria-label="Add" className={classes.fab}>
         <i class="fab fa-instagram fa-2x"></i>
       </Fab>

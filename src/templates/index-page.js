@@ -4,7 +4,8 @@ import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import Fab from '../components/fab'
-import Booking from '../components/booking'
+import Jumbotron from '../components/jumbotron'
+
 
 export const IndexPageTemplate = ({ title, heading, subheading }) => (
   <div>
@@ -28,12 +29,12 @@ const IndexPage = ({ data }) => {
     <React.Fragment>
       <SEO />
       <Layout>
+        <Jumbotron />
         <IndexPageTemplate
           title={frontmatter.title}
           heading={frontmatter.heading}
           subheading={frontmatter.subheading}
         />
-      <Booking />
       </Layout>
     </React.Fragment>
   )

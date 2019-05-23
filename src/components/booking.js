@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
@@ -13,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
+import Fab from '@material-ui/core/Fab';
 
 const styles = {
   appBar: {
@@ -21,6 +21,8 @@ const styles = {
   flex: {
     flex: 1,
   },
+  button: {
+  }
 };
 
 function Transition(props) {
@@ -45,9 +47,9 @@ class FullScreenDialog extends React.Component {
     const iframe = `<iframe src="https://squareup.com/appointments/buyer/widget/a0eefdc6-1fd1-45c3-896c-4cb83b5e7550/WPQDGP4CS4ZWG" style="min-height: 500px; width: 100%; height: 100%; border: none;"></iframe>`
     return (
       <div>
-        <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
-          Open full-screen dialog
-        </Button>
+        <Fab className={classes.button} variant="extended" color="secondary" onClick={this.handleClickOpen}>
+          Book Now
+        </Fab>
         <Dialog
           fullScreen
           open={this.state.open}
@@ -60,11 +62,8 @@ class FullScreenDialog extends React.Component {
                 <CloseIcon />
               </IconButton>
               <Typography variant="h6" color="inherit" className={classes.flex}>
-                Sound
+                Booking
               </Typography>
-              <Button color="inherit" onClick={this.handleClose}>
-                save
-              </Button>
             </Toolbar>
           </AppBar>
           <div style={{height: '100%'}} dangerouslySetInnerHTML={{__html: iframe}} />
