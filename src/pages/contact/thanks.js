@@ -12,10 +12,7 @@ import { navigate } from 'gatsby-link'
 
 const useStyles = makeStyles(theme => ({
   container: {
-    display: 'block',
-  },
-  menu: {
-    width: 200,
+    height: '100vh'
   },
 }));
 
@@ -27,7 +24,7 @@ function Thanks() {
     <React.Fragment>
         <SEO />
         <Layout>
-            <Jumbotron header="Thank you for the message"/>
+            <Jumbotron contact={true} header="Thank you for the message!"/>
         </Layout>
     </React.Fragment>
   );

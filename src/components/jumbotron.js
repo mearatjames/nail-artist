@@ -18,6 +18,13 @@ const styles = {
     textAlign: 'center',
     display: 'grid',
     alignItems: 'center',
+  },
+  contact: {
+    height: '100vh',
+    backgroundImage: `url(${BlogCover})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    marginTop: '-70px'
   }
 }
 
@@ -28,7 +35,7 @@ class Jumbotron extends Component {
         <Grid container 
           justify="center"
           alignItems="center"
-          className={classes.header}>
+          className={this.props.contact ? classes.contact : classes.header}>
           <div className={classes.headerText}>
             <Typography variant="h2">
               AiAi91
