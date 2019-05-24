@@ -24,7 +24,7 @@ const styles = {
     backgroundImage: `url(${BlogCover})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    marginTop: '-70px'
+    marginTop: '-65px'
   }
 }
 

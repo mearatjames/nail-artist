@@ -11,17 +11,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-function Thanks() {
+function Shop() {
   const classes = useStyles();
  
   return (
     <React.Fragment>
         <SEO />
         <Layout>
-            <Jumbotron contact={true} header="Thank you for the message!"/>
+            <Jumbotron contact={true} header="Something Exciting Is Coming Soon..."/>
         </Layout>
     </React.Fragment>
   );
 }
 
-export default Thanks;
+export default Shop;
