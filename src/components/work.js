@@ -6,7 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-import Image from './image'
+
 
 function TabContainer(props) {
   return (
@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const imgUrl = ['./static/images/flavor_wheel.jpg', './static/images/jumbotron.jpg', './static/images/products-full-width.jpg']
+const imgUrl = ['./images/jumbotron.jpg', './images/gatsby-astronaut.png', './images/gatsby-icon.png']
 
 function Work() {
   const classes = useStyles();
@@ -56,7 +56,7 @@ function Work() {
               </Tabs>
             </AppBar>
             <TabContainer>
-              <Image src={imgUrl[value]} />
+              <img src={imgUrl[value]} />
             </TabContainer>
           </div>
         </Grid>

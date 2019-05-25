@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import Fab from '@material-ui/core/Fab';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const styles = {
   appBar: {
@@ -17,7 +18,12 @@ const styles = {
   flex: {
     flex: 1,
   },
-  button: {
+  spinner: {
+    width: '100%',
+    height: '100%',
+    display: 'grid',
+    justifyItems: 'center',
+    alignItems: 'center'
   }
 };
 
@@ -28,6 +34,7 @@ function Transition(props) {
 class FullScreenDialog extends React.Component {
   state = {
     open: false,
+    loaded: false
   };
 
   handleClickOpen = () => {
@@ -35,12 +42,16 @@ class FullScreenDialog extends React.Component {
   };
 
   handleClose = () => {
-    this.setState({ open: false });
+    this.setState({ open: false, loaded: false });
   };
+
+  hideSpinner = () => {
+    this.setState({loaded: true})
+  }
 
   render() {
     const { classes } = this.props;
-    const iframe = `<iframe src="https://squareup.com/appointments/buyer/widget/a0eefdc6-1fd1-45c3-896c-4cb83b5e7550/WPQDGP4CS4ZWG" style="min-height: 500px; width: 100%; height: 100%; border: none;"></iframe>`
+
     return (
       <div>
         <Fab className={classes.button} variant="extended" color="secondary" onClick={this.handleClickOpen}>
@@ -62,7 +73,20 @@ class FullScreenDialog extends React.Component {
               </Typography>
             </Toolbar>
           </AppBar>
-          <div style={{height: '100%', overflow:'scroll', WebkitOverflowScrolling:'touch'}} dangerouslySetInnerHTML={{__html: iframe}} />
+          <div style={{height: '100%', overflow:'scroll', WebkitOverflowScrolling:'touch'}}>
+            {this.state.loaded 
+              ? null 
+              : <div className={classes.spinner}><CircularProgress /></div> }
+            <iframe
+              height='100%'
+              width='100%'
+              marginHeight="0"
+              marginWidth="0"
+              frameBorder='0'
+              onLoad={this.hideSpinner}
+              src='https://squareup.com/appointments/buyer/widget/a0eefdc6-1fd1-45c3-896c-4cb83b5e7550/WPQDGP4CS4ZWG'
+             />
+          </div>
         </Dialog>
       </div>
     );
