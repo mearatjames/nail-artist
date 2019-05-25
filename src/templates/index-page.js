@@ -7,10 +7,13 @@ import Layout from '../components/Layout'
 import Fab from '../components/fab'
 import Jumbotron from '../components/jumbotron'
 import Carousel from '../components/carousel'
+import GoogleMap from '../components/map'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Avatar from '@material-ui/core/Avatar';
 import IgAvatar from '../images/gatsby-icon.png'
+import Work from '../components/work'
+
 
 const styles = {
   center: {
@@ -56,9 +59,11 @@ function PageTemplate(props) {
             </div>
           </Grid>
           <Grid className={classes.center} item sm={6}>
-            <Carousel />
+            {/* <Carousel /> */}
           </Grid>
         </Grid>
+        <Work />
+        <GoogleMap />
         <h1>Test</h1>
         <h1>{props.title}</h1>
         <h1>{props.heading}</h1>

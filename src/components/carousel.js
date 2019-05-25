@@ -15,6 +15,7 @@ const styles = theme => ({
   root: {
     maxWidth: 400,
     flexGrow: 1,
+    zIndex: 10,
   },
   header: {
     display: "flex",
@@ -39,7 +40,7 @@ class SwipeableTextMobileStepper extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://api.instagram.com/v1/users/self/media/recent/?access_token=26412791.bbafa33.5d964afbcc134587b761f8d47059b5d7&count=10')
+    fetch(`https://api.instagram.com/v1/users/self/media/recent/?access_token=${process.env.GATSBY_IG_API_KEY}&count=10`)
         .then(response => {
             if (!response.ok) {
             throw new Error('HTTP error, status = ' + response.status);
