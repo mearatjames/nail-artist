@@ -40,7 +40,7 @@ class FullScreenDialog extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const iframe = `<iframe src="https://squareup.com/appointments/buyer/widget/a0eefdc6-1fd1-45c3-896c-4cb83b5e7550/WPQDGP4CS4ZWG" style="min-height: 500px; width: 100%; height: 100%; border: none; overflow:auto; -webkit-overflow-scrolling:touch"></iframe>`
+    const iframe = `<iframe src="https://squareup.com/appointments/buyer/widget/a0eefdc6-1fd1-45c3-896c-4cb83b5e7550/WPQDGP4CS4ZWG" style="min-height: 500px; width: 100%; height: 100%; border: none;"></iframe>`
     return (
       <div>
         <Fab className={classes.button} variant="extended" color="secondary" onClick={this.handleClickOpen}>
@@ -62,7 +62,7 @@ class FullScreenDialog extends React.Component {
               </Typography>
             </Toolbar>
           </AppBar>
-          <div style={{height: '100%'}} dangerouslySetInnerHTML={{__html: iframe}} />
+          <div style={{height: '100%', overflow:'scroll', WebkitOverflowScrolling:'touch'}} dangerouslySetInnerHTML={{__html: iframe}} />
         </Dialog>
       </div>
     );
