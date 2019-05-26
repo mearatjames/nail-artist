@@ -8,6 +8,7 @@ mainpitch:
   description: 'skdjfosdi jskdf josiej sdvx '
 description: fsdkfj sier sjdk
 intro:
+  avatar: /images/001-nail-polish.svg
   blurbs:
     - image: /images/products-grid2.jpg
       text: Ombre
@@ -16,7 +17,6 @@ intro:
     - image: /images/flavor_wheel.jpg
       text: Swarowski
   heading: Nail Art Highlight
-  description: I strive to keep my work trendy and fits the occasion
 main:
   heading: Test
   description: Test
