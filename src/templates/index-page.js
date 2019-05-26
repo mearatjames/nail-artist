@@ -35,6 +35,7 @@ function PageTemplate(props) {
 
   return (
     <div>
+        {console.log(props)}
         <Grid style={{marginTop: 10}} justify="center" container spacing={1}>
           <Grid className={classes.center} item sm={6}>
             <div style={{margin: '0 auto'}}>
@@ -67,7 +68,9 @@ function PageTemplate(props) {
         {/* <Work /> */}
         <GoogleMap />
         <div>
-          <Highlight />
+          <Highlight
+            intro={props.intro}
+           />
         </div>
         <Service />
         <h1>Test</h1>
@@ -91,6 +94,7 @@ const IndexPage = ({ data }) => {
       <Layout>
         <Jumbotron header="Aspiring Nail Artist" />
         <IndexPageTemplate
+          intro={frontmatter.intro}
           title={frontmatter.title}
           heading={frontmatter.heading}
           subheading={frontmatter.subheading}
@@ -119,6 +123,13 @@ export const pageQuery = graphql`
         subheading
         intro {
           blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             text
           }
           heading
