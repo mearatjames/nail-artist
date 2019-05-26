@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
 import "./Layout.css"
 import Footer from "./footer"
 import NavBar from "./nav"
-import Container from '@material-ui/core/Container';
+
 
 const Layout = ({ children }) => (
 
