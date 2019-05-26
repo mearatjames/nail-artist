@@ -6,16 +6,15 @@ import PropTypes from "prop-types"
 import "./Layout.css"
 import Footer from "./footer"
 import NavBar from "./nav"
-// import Carousel from './carousel'
+import Container from '@material-ui/core/Container';
 
 const Layout = ({ children }) => (
 
   <MuiThemeProvider theme={theme}>
     <CssBaseline />
-      <NavBar />
-      <main>{children}</main>
-      {/* <Carousel /> */}
-      <Footer />
+        <NavBar />
+          <main>{children}</main>
+        <Footer />
   </MuiThemeProvider>
 )
 

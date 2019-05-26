@@ -79,7 +79,7 @@ function Contact() {
             onSubmit={handleSubmit}
             >
             <input type="hidden" name="form-name" value="contact" />
-            <Typography variant="h3">
+            <Typography variant="h4">
                 Get In Touch
             </Typography>
             <TextField

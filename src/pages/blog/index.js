@@ -46,7 +46,7 @@ class Blog extends Component {
             </Typography>
           </div>
           </Grid>
-          <Grid container spacing={24} style={{margin: '0 auto', width: '80%'}}>
+          <Grid container spacing={2} style={{margin: '0 auto', width: '80%'}}>
             {posts.map(({ node: post }, index) => (
               <Grid item key={index}>
                 <BlogList post={post} />

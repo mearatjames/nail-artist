@@ -12,7 +12,10 @@ const styles = {
   card: {
     minWidth: 275,
     maxWidth: 500,
-    height: "100%"
+    height: "100%",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
   },
   bullet: {
     display: "inline-block",

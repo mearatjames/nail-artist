@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography'
 import Avatar from '@material-ui/core/Avatar';
 import IgAvatar from '../images/gatsby-icon.png'
 import Work from '../components/work'
+import Highlight from '../components/highlight'
+import Service from '../components/service'
 
 
 const styles = {
@@ -33,7 +35,7 @@ function PageTemplate(props) {
 
   return (
     <div>
-        <Grid style={{marginTop: 10}} justify="center" container spacing={24}>
+        <Grid style={{marginTop: 10}} justify="center" container spacing={1}>
           <Grid className={classes.center} item sm={6}>
             <div style={{margin: '0 auto'}}>
               <Typography variant="h4">
@@ -62,8 +64,12 @@ function PageTemplate(props) {
             {/* <Carousel /> */}
           </Grid>
         </Grid>
-        <Work />
+        {/* <Work /> */}
         <GoogleMap />
+        <div>
+          <Highlight />
+        </div>
+        <Service />
         <h1>Test</h1>
         <h1>{props.title}</h1>
         <h1>{props.heading}</h1>
