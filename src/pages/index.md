@@ -4,8 +4,8 @@ title: Mearat
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
-  title: Teste
   description: 'skdjfosdi jskdf josiej sdvx '
+  title: Teste
 intro:
   avatar: /images/001-nail-polish.svg
   blurbs:
@@ -17,14 +17,14 @@ intro:
       text: Swarowski
   heading: Nail Art Highlight
 services:
-  - icon: /images/coffee_gear.png
+  - description: Rejuvinate your hands
+    icon: /images/001-nail-polish.svg
     title: Manicure
-    description: Rejuvinate your hands
-  - icon: /images/coffee_gear.png
+  - description: Rejuvinate your hands
+    icon: /images/001-nail-polish.svg
     title: Manicure
-    description: Rejuvinate your hands
-  - icon: /images/coffee_gear.png
+  - description: Rejuvinate your hands
+    icon: /images/001-nail-polish.svg
     title: Manicure
-    description: Rejuvinate your hands
 ---
 
