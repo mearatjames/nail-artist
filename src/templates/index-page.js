@@ -12,7 +12,6 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Avatar from '@material-ui/core/Avatar';
 import IgAvatar from '../images/gatsby-icon.png'
-import Work from '../components/work'
 import Highlight from '../components/highlight'
 import Service from '../components/service'
 
@@ -26,6 +25,9 @@ const styles = {
   inLine: {
     textAlign: 'center',
     margin: '5px auto',
+  },
+  background: {
+    backgroundColor: '#fcf5f5'
   }
 }
 
@@ -36,6 +38,11 @@ function PageTemplate(props) {
   return (
     <div>
         {console.log(props)}
+        <div className={classes.background}>
+          <Highlight
+            intro={props.intro}
+           />
+        </div>
         <Grid style={{marginTop: 10}} justify="center" container spacing={1}>
           <Grid className={classes.center} item sm={6}>
             <div style={{margin: '0 auto'}}>
@@ -66,17 +73,8 @@ function PageTemplate(props) {
           </Grid>
         </Grid>
         {/* <Work /> */}
-        <GoogleMap />
-        <div>
-          <Highlight
-            intro={props.intro}
-           />
-        </div>
         <Service />
-        <h1>Test</h1>
-        <h1>{props.title}</h1>
-        <h1>{props.heading}</h1>
-        <h1>{props.subheading}</h1>
+        <GoogleMap />
         <Fab />
       </div>
   )  
@@ -133,6 +131,9 @@ export const pageQuery = graphql`
             text
           }
           heading
+          avatar {
+            relativePath
+          }
         }
       }
     }

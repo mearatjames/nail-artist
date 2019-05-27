@@ -10,7 +10,7 @@ import Hidden from "@material-ui/core/Hidden"
 import ListItemText from "@material-ui/core/ListItemText"
 import ListItem from "@material-ui/core/ListItem"
 import List from "@material-ui/core/List"
-import Container from '@material-ui/core/Container'
+import Container from "@material-ui/core/Container"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import Booking from "./booking"
 import Button from "@material-ui/core/Button"
@@ -41,8 +41,8 @@ const styles = {
     backgroundColor: "#ec407a38",
   },
   center: {
-    textAlign: 'center',
-  }
+    textAlign: "center",
+  },
 }
 
 class NavBar extends React.Component {
@@ -52,11 +52,15 @@ class NavBar extends React.Component {
   }
 
   toggleDrawer = (side, open) => event => {
-    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return
     }
-    this.setState(state => ({ [side]: open }));
-  };
+    this.setState(state => ({ [side]: open }))
+  }
 
   render() {
     const { classes } = this.props
@@ -70,9 +74,14 @@ class NavBar extends React.Component {
       >
         <List>
           {["Home", "Blog", "Shop", "Contact"].map((text, index) => (
-            <Link key={index} style={{textDecoration: 'none'}} to={text == "Home" ? "/" : "/" + text.toLowerCase()}><ListItem className={classes.center} button>
-              <ListItemText primary={text} />
-            </ListItem>
+            <Link
+              key={index}
+              style={{ textDecoration: "none" }}
+              to={text == "Home" ? "/" : "/" + text.toLowerCase()}
+            >
+              <ListItem className={classes.center} button>
+                <ListItemText primary={text} />
+              </ListItem>
             </Link>
           ))}
         </List>
@@ -80,54 +89,56 @@ class NavBar extends React.Component {
     )
 
     return (
-      <Container>
+      <React.Fragment>
         <AppBar position="static">
-          <Toolbar>
-            <Hidden mdUp>
-              <IconButton
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="Menu"
-                onClick={this.toggleDrawer('top', true)}
-              >
-                <MenuIcon />
-              </IconButton>
-            </Hidden>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
-              AiAi91
-            </Typography>
-            <Hidden smDown>
-              <Link
-                activeClassName={classes.activeLink}
-                className={classes.link}
-                to="/"
-              >
-                <Button className={classes.navButton}>Home</Button>
-              </Link>
-              <Link
-                activeClassName={classes.activeLink}
-                className={classes.link}
-                to="/blog"
-              >
-                <Button className={classes.navButton}>Blog</Button>
-              </Link>
-              <Link
-                activeClassName={classes.activeLink}
-                className={classes.link}
-                to="/shop"
-              >
-                <Button className={classes.navButton}>Shop</Button>
-              </Link>
-              <Link
-                activeClassName={classes.activeLink}
-                className={classes.link}
-                to="/contact"
-              >
-                <Button className={classes.navButton}>Contact</Button>
-              </Link>
-            </Hidden>
-            <Booking />
-          </Toolbar>
+          <Container>
+            <Toolbar>
+              <Hidden mdUp>
+                <IconButton
+                  className={classes.menuButton}
+                  color="inherit"
+                  aria-label="Menu"
+                  onClick={this.toggleDrawer("top", true)}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Hidden>
+              <Typography variant="h6" color="inherit" className={classes.grow}>
+                AiAi91
+              </Typography>
+              <Hidden smDown>
+                <Link
+                  activeClassName={classes.activeLink}
+                  className={classes.link}
+                  to="/"
+                >
+                  <Button className={classes.navButton}>Home</Button>
+                </Link>
+                <Link
+                  activeClassName={classes.activeLink}
+                  className={classes.link}
+                  to="/blog"
+                >
+                  <Button className={classes.navButton}>Blog</Button>
+                </Link>
+                <Link
+                  activeClassName={classes.activeLink}
+                  className={classes.link}
+                  to="/shop"
+                >
+                  <Button className={classes.navButton}>Shop</Button>
+                </Link>
+                <Link
+                  activeClassName={classes.activeLink}
+                  className={classes.link}
+                  to="/contact"
+                >
+                  <Button className={classes.navButton}>Contact</Button>
+                </Link>
+              </Hidden>
+              <Booking />
+            </Toolbar>
+          </Container>
         </AppBar>
         <SwipeableDrawer
           anchor="top"
@@ -137,7 +148,7 @@ class NavBar extends React.Component {
         >
           {drawer("top")}
         </SwipeableDrawer>
-      </Container>
+      </React.Fragment>
     )
   }
 }

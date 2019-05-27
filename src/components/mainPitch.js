@@ -8,18 +8,6 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 
 
-function TabContainer(props) {
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
-    </Typography>
-  );
-}
-
-TabContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -33,9 +21,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const imgUrl = ['./images/jumbotron.jpg', './images/gatsby-astronaut.png', './images/gatsby-icon.png']
 
-function Work() {
+function MainPitch(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -68,4 +55,4 @@ function Work() {
   );
 }
 
-export default Work;
+export default MainPitch;
