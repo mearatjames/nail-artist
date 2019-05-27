@@ -33,7 +33,6 @@ function PageTemplate(props) {
 
   return (
     <div>
-        {console.log(props)}
         <div className={classes.background}>
           <Highlight
             intro={props.intro}
@@ -43,7 +42,7 @@ function PageTemplate(props) {
           <Instagram />
         </div>
         <div className={classes.background}>
-          <Service />
+          <Service services={props.services} />
         </div>
         <GoogleMap />
         <Fab />
@@ -64,6 +63,7 @@ const IndexPage = ({ data }) => {
         <Jumbotron header="Aspiring Nail Artist" />
         <IndexPageTemplate
           intro={frontmatter.intro}
+          services={frontmatter.services}
           title={frontmatter.title}
           heading={frontmatter.heading}
           subheading={frontmatter.subheading}
@@ -90,6 +90,13 @@ export const pageQuery = graphql`
         title
         heading
         subheading
+        services {
+          title
+          description
+          icon {
+            relativePath
+          }
+        }
         intro {
           blurbs {
             image {

@@ -1,7 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
-import logo from "../images/gatsby-icon.png"
 import serviceIcon from '../images/service.svg'
 import Avatar from "@material-ui/core/Avatar"
 import Typography from "@material-ui/core/Typography"
@@ -32,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-function Service() {
+function Service(props) {
   const classes = useStyles()
 
   return (
@@ -44,36 +43,17 @@ function Service() {
           Main Services
         </Typography>
         </Grid>
-        <Grid className={classes.item} item xs={12} sm={4}>
-          <Avatar alt="Remy Sharp" src={logo} className={classes.bigAvatar} />
-          <Typography variant="h6" gutterBottom>
-            Pedicure
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Quos blanditiis tenetur unde suscipit.
-          </Typography>
-        </Grid>
-        <Grid className={classes.item} item xs={12} sm={4}>
-          <Avatar alt="Remy Sharp" src={logo} className={classes.bigAvatar} />
-          <Typography variant="h6" gutterBottom>
-            Pedicure
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Quos blanditiis tenetur unde suscipit.
-          </Typography>
-        </Grid>
-        <Grid className={classes.item} item xs={12} sm={4}>
-          <Avatar alt="Remy Sharp" src={logo} className={classes.bigAvatar} />
-          <Typography variant="h6" gutterBottom>
-            Pedicure
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Quos blanditiis tenetur unde suscipit.
-          </Typography>
-        </Grid>
+        {props.services.map((item, index) => (
+          <Grid key={index} className={classes.item} item xs={12} sm={4}>
+            <Avatar alt={item.title} src={'./images/' + item.icon.relativePath} className={classes.bigAvatar} />
+            <Typography variant="h6" gutterBottom>
+              {item.title}
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              {item.description}
+            </Typography>
+          </Grid>      
+        ))}
         <Grid alignContent='center' className={classes.button} item xs={12}>
           <Button target="blank" href='https://square.site/book/WPQDGP4CS4ZWG/nail-spa-demo-santa-maria-ca' variant="contained" color="primary">
             View Full List of Services
