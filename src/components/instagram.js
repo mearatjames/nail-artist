@@ -5,8 +5,6 @@ import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 import Avatar from "@material-ui/core/Avatar"
 import IgAvatar from "../images/instagram.svg"
-import Hidden from "@material-ui/core/Hidden"
-import Paper from "@material-ui/core/Paper"
 import Carousel from './carousel'
 
 const useStyles = makeStyles(theme => ({
