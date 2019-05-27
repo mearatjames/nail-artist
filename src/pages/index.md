@@ -6,7 +6,6 @@ subheading: Support sustainable farming while enjoying a cup
 mainpitch:
   title: Teste
   description: 'skdjfosdi jskdf josiej sdvx '
-description: fsdkfj sier sjdk
 intro:
   avatar: /images/001-nail-polish.svg
   blurbs:
@@ -17,17 +16,15 @@ intro:
     - image: /images/flavor_wheel.jpg
       text: Swarowski
   heading: Nail Art Highlight
-main:
-  heading: Test
-  description: Test
-  image1:
-    alt: Test
-    image: /images/coffee-gear.png
-  image2:
-    alt: Test
-    image: /images/coffee-gear.png
-  image3:
-    alt: Test
-    image: /images/coffee-gear.png
+services:
+  - icon: /images/coffee_gear.png
+    title: Manicure
+    description: Rejuvinate your hands
+  - icon: /images/coffee_gear.png
+    title: Manicure
+    description: Rejuvinate your hands
+  - icon: /images/coffee_gear.png
+    title: Manicure
+    description: Rejuvinate your hands
 ---
 
