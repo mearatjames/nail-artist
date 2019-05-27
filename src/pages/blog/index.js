@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid'
 import { withStyles } from "@material-ui/core/styles"
 import Typography from '@material-ui/core/Typography'
 import BlogCover from '../../images/jumbotron.jpg'
-
+import Container from "@material-ui/core/Container"
 
 const styles = {
   header: {
@@ -24,6 +24,10 @@ const styles = {
     textAlign: 'center',
     display: 'grid',
     alignItems: 'center',
+  },
+  background: {
+    paddingBottom: 20,
+    backgroundColor: '#fcf5f5'
   }
 }
 
@@ -46,13 +50,17 @@ class Blog extends Component {
             </Typography>
           </div>
           </Grid>
-          <Grid container spacing={2} style={{margin: '0 auto', width: '80%'}}>
-            {posts.map(({ node: post }, index) => (
-              <Grid item key={index}>
-                <BlogList post={post} />
+          <div className={classes.background}>
+            <Container>
+              <Grid justify='center' container spacing={2}>
+                {posts.map(({ node: post }, index) => (
+                  <Grid item key={index}>
+                    <BlogList post={post} />
+                  </Grid>
+                ))}
               </Grid>
-            ))}
-          </Grid>
+            </Container>
+          </div>
         </Layout>
       </React.Fragment>
     )

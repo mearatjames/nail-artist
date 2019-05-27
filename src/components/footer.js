@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   footer: {
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#f9edf1',
     height: 80,
     textAlign: 'center',
     alignItems: 'center',
@@ -16,7 +16,8 @@ const styles = theme => ({
   },
   footerText: {
     textDecoration: 'none',
-    color: 'black'
+    color: 'black',
+    fontSize: '0.7rem',
   },
   admin: {
     textDecoration: 'none',
@@ -34,14 +35,15 @@ return (
   <footer>
     <div className={classes.footer}>
       <div>
-          <Link
-            to="/admin/"
+          <a
+            href="/admin"
+            target="blank"
             className={classes.admin}
           >
             Admin
-          </Link>
+          </a>
       </div>
-      <div>
+      <div className={classes.footerText}>
           © {new Date().getFullYear()}, Powered by
           {` `}
           <a className={classes.footerText} href="https://www.mearat.com">Mearat</a>

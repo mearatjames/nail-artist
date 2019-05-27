@@ -43,7 +43,7 @@ function SimpleCard(props) {
               alt: `featured image thumbnail for post ${props.post.title}`,
             }}
           />
-        <Typography variant="h4" component="h3">
+        <Typography variant="h4">
           {frontmatter.title}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
@@ -54,7 +54,7 @@ function SimpleCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button href={props.post.fields.slug} size="small">Read More</Button>
+        <Button color='secondary' href={props.post.fields.slug} size="small">Read More</Button>
       </CardActions>
     </Card>
   )

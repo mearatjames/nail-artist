@@ -21,14 +21,14 @@ export const BlogPostTemplate = ({
     const PostContent = contentComponent || Content
 
     return (
-        <Grid container style={{margin: '0 auto', maxWidth: '768px', width: '80%'}}>
-            <Typography component="h4" variant="h3" gutterBottom>
+        <Grid container style={{margin: '20px auto 10px auto', maxWidth: '768px', width: '80%'}}>
+            <Typography color='primary' component="h4" variant="h3" gutterBottom>
                 {title}
             </Typography>
             <Typography color='textSecondary' variant="subtitle1" gutterBottom>
                 {description}
             </Typography>
-            <PostContent content={content} />
+            <PostContent  className='blog' content={content} />
         </Grid>
     )
 }

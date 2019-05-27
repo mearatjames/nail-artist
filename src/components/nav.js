@@ -23,7 +23,7 @@ const styles = {
     height: "70px",
   },
   grow: {
-    flexGrow: 1,
+    flexGrow: 2,
   },
   menuButton: {
     marginLeft: -12,
@@ -36,6 +36,7 @@ const styles = {
   },
   link: {
     textDecoration: "none",
+    color: 'white'
   },
   activeLink: {
     backgroundColor: "#ec407a38",
@@ -103,9 +104,16 @@ class NavBar extends React.Component {
                   <MenuIcon />
                 </IconButton>
               </Hidden>
-              <Typography variant="h6" color="inherit" className={classes.grow}>
-                AiAi91
+              <div className={classes.grow}>
+              <Link
+                  className={classes.link}
+                  to="/"
+                >
+              <Typography variant="h6" color="inherit">
+                AIAI.91
               </Typography>
+              </Link>
+              </div>
               <Hidden smDown>
                 <Link
                   activeClassName={classes.activeLink}

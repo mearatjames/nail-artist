@@ -7,3 +7,13 @@ html {
 body {
   color: rgb(68, 68, 69);
 }
+
+.blog {
+  font-family: Roboto;
+  font-size: 1.4rem;
+}
+
+.blog h1, .blog h2, .blog h3, .blog h4, .blog h5, .blog h6 {
+  color: #ac1356;
+  font-weight: 400;
+}
