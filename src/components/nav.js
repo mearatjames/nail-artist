@@ -10,7 +10,6 @@ import Hidden from "@material-ui/core/Hidden"
 import ListItemText from "@material-ui/core/ListItemText"
 import ListItem from "@material-ui/core/ListItem"
 import List from "@material-ui/core/List"
-import Container from "@material-ui/core/Container"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import Booking from "./booking"
 import Button from "@material-ui/core/Button"
@@ -92,7 +91,6 @@ class NavBar extends React.Component {
     return (
       <React.Fragment>
         <AppBar position="static">
-          <Container>
             <Toolbar>
               <Hidden mdUp>
                 <IconButton
@@ -146,7 +144,6 @@ class NavBar extends React.Component {
               </Hidden>
               <Booking />
             </Toolbar>
-          </Container>
         </AppBar>
         <SwipeableDrawer
           anchor="top"

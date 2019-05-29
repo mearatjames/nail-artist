@@ -1,9 +1,8 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/styles"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
-import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
 import Img from "gatsby-image"
 import Typography from "@material-ui/core/Typography"
@@ -56,7 +55,6 @@ function Highlight(props) {
   }
 
   return (
-    <Container>
       <Grid
         wrap="wrap-reverse"
         direction="row"
@@ -116,7 +114,6 @@ function Highlight(props) {
           </Hidden>
         </Grid>
       </Grid>
-    </Container>
   )
 }
 

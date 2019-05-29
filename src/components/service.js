@@ -1,10 +1,9 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/styles"
 import Grid from "@material-ui/core/Grid"
 import serviceIcon from '../images/service.svg'
 import Avatar from "@material-ui/core/Avatar"
 import Typography from "@material-ui/core/Typography"
-import Container from "@material-ui/core/Container"
 import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles(theme => ({
@@ -35,7 +34,6 @@ function Service(props) {
   const classes = useStyles()
 
   return (
-    <Container>
       <Grid container alignContent='center' justify='center' className={classes.root}>
         <Grid item alignContent='center' xs={12}>
         <Avatar className={classes.center} alt="Service Icon" src={serviceIcon} />
@@ -60,7 +58,6 @@ function Service(props) {
           </Button>
         </Grid>
       </Grid>
-    </Container>
   )
 }
 

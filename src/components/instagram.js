@@ -1,6 +1,5 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
-import Container from "@material-ui/core/Container"
+import { makeStyles } from "@material-ui/styles"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 import Avatar from "@material-ui/core/Avatar"
@@ -30,7 +29,6 @@ function Instagram(props) {
   const classes = useStyles()
 
   return (
-    <Container>
       <Grid
         alignItems="center"
         justify="center"
@@ -71,7 +69,6 @@ function Instagram(props) {
           <Carousel />
         </Grid>
       </Grid>
-    </Container>
   )
 }
 
