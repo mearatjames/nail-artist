@@ -48,7 +48,6 @@ function Contact() {
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    console.log(values)
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -58,7 +57,6 @@ function Contact() {
       }),
     })
       .then((result) => {
-        console.log(result)
         navigate(form.getAttribute('action'))
       })
       .catch(error => alert(error))
