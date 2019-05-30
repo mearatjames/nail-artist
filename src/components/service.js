@@ -54,7 +54,7 @@ function Service(props) {
             <Typography variant="h6" gutterBottom>
               {item.title}
             </Typography>
-            <Typography variant="body1" gutterBottom>
+            <Typography align="justify" variant="body1" gutterBottom>
               {item.description}
             </Typography>
           </Grid>      
