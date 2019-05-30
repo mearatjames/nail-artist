@@ -6,7 +6,7 @@ description: >-
   If you’re a fan of floral nails and feel like you’ve done it all, then these
   minimalist flower nails should be your next project!
 featuredpost: false
-featuredimage: /images/nail-1-.svg
+featuredimage: /images/kris-atomic-73937-unsplash.jpg
 tags:
   - Flower Nails
 ---
