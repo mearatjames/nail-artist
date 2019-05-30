@@ -66,7 +66,7 @@ function Highlight(props) {
         <Grid item xs={12} sm={6}>
           <Img
             fluid={
-              props.intro.blurbs[selectedIndex].image.childImageSharp.fluid
+              !!props.intro.blurbs[selectedIndex].image.childImageSharp ? props.intro.blurbs[selectedIndex].image.childImageSharp.fluid : props.intro.blurbs[selectedIndex].image
             }
             alt={props.intro.blurbs[selectedIndex].text}
           />
