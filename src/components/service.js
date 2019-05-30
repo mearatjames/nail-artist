@@ -13,12 +13,14 @@ const useStyles = makeStyles(theme => ({
     minHeight: '400px',
   },
   bigAvatar: {
-    margin: 10,
+    margin: '10px auto',
     width: 60,
     height: 60,
   },
   item: {
-    border: "1px solid #fcf5f5",
+    justifyContent: 'center',
+    textAlign: 'center',
+
   },
   button: {
     textAlign: 'center',

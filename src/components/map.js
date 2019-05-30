@@ -8,7 +8,7 @@ const GoogleMap = () => {
     const iframe = `<iframe height="100%" width="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=${process.env.GATSBY_GOOGLE_MAP_API_KEY}&q=Image+Day+Spa,Santa+Maria+CA" allowfullscreen></iframe>`
     return (
             <Grid alignItems="center" container>
-                <Grid item xs={12} sm={3}>
+                <Grid style={{margin: '10 auto'}} item xs={12} sm={3}>
                 <Avatar
                     alt='MapIcon'
                     src={mapIcon}
