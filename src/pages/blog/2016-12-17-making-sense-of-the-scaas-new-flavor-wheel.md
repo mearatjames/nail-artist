@@ -6,7 +6,7 @@ description: >-
   Kupa educator Jess Alexander-Snyder has these tips for working with dip
   powders.
 featuredpost: false
-featuredimage: /images/flavor_wheel.jpg
+featuredimage: /images/rune-enstad-571590-unsplash.jpg
 tags:
   - dip powders
 ---
