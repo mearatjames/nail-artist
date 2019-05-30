@@ -4,7 +4,7 @@ title: The Secret to a Perfect Pedicure
 date: 2019-05-20T18:02:53.061Z
 description: What’s your best tip for the perfect pedicure?
 featuredpost: false
-featuredimage: /images/nail.svg
+featuredimage: /images/rune-enstad-571590-unsplash.jpg
 tags:
   - Pedicure
 ---
