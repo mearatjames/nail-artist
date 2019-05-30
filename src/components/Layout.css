@@ -17,3 +17,7 @@ body {
   color: #ac1356;
   font-weight: 400;
 }
+
+.blog img {
+  max-width: 980px;
+}

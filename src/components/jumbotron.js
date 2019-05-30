@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid'
 
 const styles = {
   header: {
-    height: '600px',
+    height: '300px',
     backgroundImage: `url(${BlogCover})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -24,7 +24,14 @@ const styles = {
     backgroundImage: `url(${BlogCover})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    marginTop: '-65px'
+    marginTop: '-70px'
+  },
+  landingPage: {
+    height: '600px',
+    backgroundImage: `url(${BlogCover})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    marginTop: '-70px'
   }
 }
 
@@ -35,10 +42,10 @@ class Jumbotron extends Component {
         <Grid container 
           justify="center"
           alignItems="center"
-          className={this.props.contact ? classes.contact : classes.header}>
+          className={this.props.landingPage? classes.landingPage: this.props.contact ? classes.contact : classes.header}>
           <div className={classes.headerText}>
             <Typography variant="h2">
-              AiAi91
+              AiAi.91
             </Typography>
             <Typography variant="h6">
                 {this.props.header}

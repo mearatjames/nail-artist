@@ -1,11 +1,10 @@
 ---
 templateKey: index-page
 title: Mearat
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
 mainpitch:
-  description: 'skdjfosdi jskdf josiej sdvx '
-  title: Teste
+  description: Designing the perfect nails that works for you helps build confidence by making you feel and look great.
+  title: Devoted to Beauty Addicts Everywhere
+  subtitle: Although true beauty comes from within, a rockin’ manicure always helps. 
 intro:
   avatar: /images/001-nail-polish.svg
   blurbs:

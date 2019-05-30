@@ -14,8 +14,9 @@ import Paper from '@material-ui/core/Paper'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
+    maxWidth: "980px",
     backgroundColor: "#fcf5f5",
+    margin: '0 auto',
   },
   list: {
     maxWidth: "400px",

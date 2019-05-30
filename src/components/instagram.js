@@ -8,7 +8,8 @@ import Carousel from './carousel'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
+    maxWidth: "980px",
+    margin: '0 auto',
     minHeight: '400px',
   },
   center: {
@@ -43,10 +44,10 @@ function Instagram(props) {
               src={IgAvatar}
             />
             <Typography className={classes.inLine} color="primary" variant="h5" gutterBottom>Latest Instagram Feeds</Typography>
-            <Typography className={classes.inLine} variant="subtitle1">
+            <Typography className={classes.inLine} color="textSecondary" variant="subtitle1">
               Curious about what I have been up to?
             </Typography>
-            <Typography className={classes.inLine} variant="subtitle1">
+            <Typography className={classes.inLine} color='textSecondary' variant="subtitle2">
               Follow me on Instagram
             </Typography>
             <div className={classes.inLine}>

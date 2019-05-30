@@ -10,6 +10,7 @@ import Instagram from '../components/instagram'
 import GoogleMap from '../components/map'
 import Highlight from '../components/highlight'
 import Service from '../components/service'
+import MainPitch from '../components/mainPitch';
 
 
 const styles = {
@@ -24,7 +25,7 @@ const styles = {
   },
   background: {
     backgroundColor: '#fcf5f5'
-  }
+  },
 }
 
 
@@ -33,6 +34,7 @@ function PageTemplate(props) {
 
   return (
     <div>
+        <MainPitch mainpitch={props.mainpitch} />
         <div className={classes.background}>
           <Highlight
             intro={props.intro}
@@ -60,13 +62,14 @@ const IndexPage = ({ data }) => {
     <React.Fragment>
       <SEO />
       <Layout>
-        <Jumbotron header="Aspiring Nail Artist" />
+        <Jumbotron landingPage={true} header="Aspiring Nail Artist" />
         <IndexPageTemplate
           intro={frontmatter.intro}
           services={frontmatter.services}
           title={frontmatter.title}
           heading={frontmatter.heading}
           subheading={frontmatter.subheading}
+          mainpitch={frontmatter.mainpitch}
         />
       </Layout>
     </React.Fragment>
@@ -88,8 +91,11 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        heading
-        subheading
+        mainpitch {
+          title
+          subtitle
+          description
+        }
         services {
           title
           description
@@ -101,7 +107,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 640, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }

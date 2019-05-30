@@ -7,10 +7,11 @@ import Grid from '@material-ui/core/Grid'
 import { withStyles } from "@material-ui/core/styles"
 import Typography from '@material-ui/core/Typography'
 import BlogCover from '../../images/jumbotron.jpg'
+import Pagination from "material-ui-flat-pagination"
 
 const styles = {
   header: {
-    height: '600px',
+    height: '300px',
     backgroundImage: `url(${BlogCover})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -30,11 +31,22 @@ const styles = {
   }
 }
 
+
+
 class Blog extends Component {
+  state = {
+    offset: 1
+  }
+
+  handleClick = (offset) => {
+    this.setState({ offset });
+  }
+ 
   render() {
     const { classes } = this.props
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
+   
     return (
       <React.Fragment>
         <SEO />
@@ -42,7 +54,8 @@ class Blog extends Component {
           <Grid container 
           justify="center"
           alignItems="center"
-          className={classes.header}>
+          className={classes.header}
+          >
           <div className={classes.headerText}>
             <Typography style={{opacity: 1}} variant="h2">
               AiAi's Blog
@@ -50,14 +63,22 @@ class Blog extends Component {
           </div>
           </Grid>
           <div className={classes.background}>
-              <Grid justify='center' container spacing={2}>
-                {posts.map(({ node: post }, index) => (
-                  <Grid item key={index}>
+              <Grid justify='center' container>
+                {posts.slice(this.state.offset, this.state.offset + 4).map(({ node: post }, index) => (
+                  <Grid style={{margin: '10px'}} item key={index}>
                     <BlogList post={post} />
                   </Grid>
                 ))}
               </Grid>
           </div>
+          <Grid item style={{textAlign: 'center'}} xs={12}>
+            <Pagination
+              limit={4}
+              offset={this.state.offset}
+              total={posts.length}
+              onClick={(e, offset) => this.handleClick(offset)}
+            />
+          </Grid>
         </Layout>
       </React.Fragment>
     )
@@ -86,7 +107,7 @@ export const pageQuery = graphql`
             featuredpost
             featuredimage {
               childImageSharp {
-                fluid(maxWidth: 120, quality: 100) {
+                fluid(maxWidth: 460, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }

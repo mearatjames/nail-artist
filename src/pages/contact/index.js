@@ -68,7 +68,7 @@ class Contact extends Component {
           <SEO />
           <Layout>
               <Jumbotron header="Contact"/>
-              <Paper style={{margin: '30px auto', padding: 20, maxWidth: '80%'}}>
+              <Paper style={{margin: '30px auto', padding: 20, maxWidth: '968px'}}>
               <form 
               name="contact" 
               action='/contact/thanks' 

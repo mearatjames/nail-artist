@@ -5,10 +5,12 @@ import serviceIcon from '../images/service.svg'
 import Avatar from "@material-ui/core/Avatar"
 import Typography from "@material-ui/core/Typography"
 import Button from '@material-ui/core/Button'
+import Divider from '@material-ui/core/Divider'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
+    maxWidth: '980px',
+    margin: '0 auto',
     backgroundColor: '#fcf5f5',
     minHeight: '400px',
   },
@@ -28,7 +30,9 @@ const useStyles = makeStyles(theme => ({
     paddingTop: '20px',
   },
   center: {
-    margin: '0 auto'
+    margin: '10px auto',
+    width: '60px',
+    display: 'block',
   }
 }))
 
@@ -38,10 +42,11 @@ function Service(props) {
   return (
       <Grid container alignContent='center' justify='center' className={classes.root}>
         <Grid item alignContent='center' xs={12}>
-        <Avatar className={classes.center} alt="Service Icon" src={serviceIcon} />
+        <img className={classes.center} alt="Service Icon" src={serviceIcon} />
         <Typography align='center' color="primary" variant="h5" gutterBottom>
           Main Services
         </Typography>
+        <Divider />
         </Grid>
         {props.services.map((item, index) => (
           <Grid key={index} className={classes.item} item xs={12} sm={4}>
