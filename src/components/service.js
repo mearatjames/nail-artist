@@ -33,6 +33,9 @@ const useStyles = makeStyles(theme => ({
     margin: '10px auto',
     width: '60px',
     display: 'block',
+  },
+  description: {
+    padding: '5px 15px'
   }
 }))
 
@@ -54,7 +57,7 @@ function Service(props) {
             <Typography variant="h6" gutterBottom>
               {item.title}
             </Typography>
-            <Typography align="justify" variant="body1" gutterBottom>
+            <Typography className={classes.description} align="left" variant="body1" gutterBottom>
               {item.description}
             </Typography>
           </Grid>      

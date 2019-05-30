@@ -13,7 +13,7 @@ intro:
     - image: /images/products-grid2.jpg
       text: Ombre
     - image: /images/home-jumbotron.jpg
-      text: Naked
+      text: Acrylic
     - image: /images/flavor_wheel.jpg
       text: Swarowski
   heading: Featured Nail Arts
