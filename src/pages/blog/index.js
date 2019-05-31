@@ -35,7 +35,7 @@ const styles = {
 
 class Blog extends Component {
   state = {
-    offset: 1
+    offset: 0
   }
 
   handleClick = (offset) => {
