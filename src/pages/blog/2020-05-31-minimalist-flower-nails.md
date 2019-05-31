@@ -10,6 +10,8 @@ featuredimage: /images/kris-atomic-73937-unsplash.jpg
 tags:
   - Flower Nails
 ---
+![chemex](/images/kris-atomic-73937-unsplash.jpg)
+
 I bet you have done nothing like this before ;) It’s a great nail art idea with a plenty of room for experimentation. Plus, this manicures is very feminine, just like all floral nails, yet it is edgy and understated at the same time.
 
 I had an idea for this manicure in my head for quite some time. So it was very satisfying to finally do it and see that it turned out really well…

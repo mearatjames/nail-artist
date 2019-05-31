@@ -17,6 +17,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: "980px",
     backgroundColor: "#fcf5f5",
     margin: '0 auto',
+    minHeight: '400px'
   },
   list: {
     maxWidth: "400px",
