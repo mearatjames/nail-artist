@@ -10,6 +10,8 @@ featuredimage: /images/kris-atomic-73937-unsplash.jpg
 tags:
   - dip powders
 ---
+![Nails](/images/kris-atomic-73937-unsplash.jpg "Nails")
+
 Kupa educator Jess Alexander-Snyder has these tips for working with dip powders.
 
 **1. Always follow state board guidelines!** It seems simple, but a lot of techs make sanitation mistakes while using dip powder. Never reuse powder on multiple clients. It’s like reusing makeup or hair brushes. Always put the powder into some type of a container rather than dipping straight into the jar. Bacteria and small skin particles can get mixed up with the powder.
