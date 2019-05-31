@@ -87,7 +87,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: [],
+  keywords: ['Aiai, Aiai91', 'Aiai.91', 'Nail Artist'],
   description: ``,
 }
 
