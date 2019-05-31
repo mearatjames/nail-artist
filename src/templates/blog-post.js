@@ -5,42 +5,45 @@ import SEO from "../components/seo"
 import Layout from "../components/Layout"
 import Fab from "../components/fab"
 import Booking from "../components/booking"
-import Content, { HTMLContent } from '../components/content'
-import Helmet from 'react-helmet'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography';
+import Content, { HTMLContent } from "../components/content"
+import Helmet from "react-helmet"
+import Grid from "@material-ui/core/Grid"
+import Typography from "@material-ui/core/Typography"
 
-export const BlogPostTemplate = ({ 
-    content,
-    contentComponent,
-    description,
-    tags,
-    title,
-    helmet,
+export const BlogPostTemplate = ({
+  content,
+  contentComponent,
+  description,
+  tags,
+  title,
+  helmet,
 }) => {
-    const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content
 
-    return (
-        <Grid container style={{margin: '20px auto 10px auto', maxWidth: '768px', width: '80%'}}>
-            <Typography color='primary' component="h4" variant="h3" gutterBottom>
-                {title}
-            </Typography>
-            <Typography color='textSecondary' variant="subtitle1" gutterBottom>
-                {description}
-            </Typography>
-            <PostContent  className='blog' content={content} />
-        </Grid>
-    )
+  return (
+    <div
+      style={{ margin: "20px auto 10px auto", maxWidth: "768px", width: "80%" }}
+    >
+      <div>
+        <Typography align='center' color="primary" component="h4" variant="h3" gutterBottom>
+          {title}
+        </Typography>
+        <Typography align='center' color="textSecondary" variant="subtitle1" gutterBottom>
+          {description}
+        </Typography>
+      </div>
+      <PostContent className="blog" content={content} />
+    </div>
+  )
 }
-  
 
 BlogPostTemplate.propTypes = {
-    content: PropTypes.node.isRequired,
-    contentComponent: PropTypes.func,
-    description: PropTypes.string,
-    title: PropTypes.string,
-    helmet: PropTypes.object,
-  }
+  content: PropTypes.node.isRequired,
+  contentComponent: PropTypes.func,
+  description: PropTypes.string,
+  title: PropTypes.string,
+  helmet: PropTypes.object,
+}
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
@@ -49,7 +52,7 @@ const BlogPost = ({ data }) => {
     <React.Fragment>
       <SEO />
       <Layout>
-          {console.log(post)}
+        {console.log(post)}
         <BlogPostTemplate
           content={post.html}
           contentComponent={HTMLContent}

@@ -6,16 +6,16 @@ import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import PreviewCompatibleImage from "./PreviewCompatibleImage"
 
 const styles = {
   card: {
     minWidth: 275,
     maxWidth: 500,
     height: "100%",
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between'
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
   },
   bullet: {
     display: "inline-block",
@@ -37,24 +37,24 @@ function SimpleCard(props) {
   return (
     <Card className={classes.card}>
       <CardContent>
-      <PreviewCompatibleImage
+        <div style={{height: '280px'}}>
+          <PreviewCompatibleImage
             imageInfo={{
               image: props.post.frontmatter.featuredimage,
               alt: `featured image thumbnail for post ${props.post.title}`,
             }}
           />
-        <Typography variant="h4">
-          {frontmatter.title}
-        </Typography>
+        </div>
+        <Typography variant="h4">{frontmatter.title}</Typography>
         <Typography className={classes.pos} color="textSecondary">
           {frontmatter.date}
         </Typography>
-        <Typography component="p">
-          {props.post.excerpt}
-        </Typography>
+        <Typography component="p">{props.post.excerpt}</Typography>
       </CardContent>
       <CardActions>
-        <Button color='secondary' href={props.post.fields.slug} size="small">Read More</Button>
+        <Button color="secondary" href={props.post.fields.slug} size="small">
+          Read More
+        </Button>
       </CardActions>
     </Card>
   )
