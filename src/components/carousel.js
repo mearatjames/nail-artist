@@ -72,7 +72,7 @@ class SwipeableTextMobileStepper extends React.Component {
 
     return (
       <Paper className={classes.root}>
-        {/* <AutoPlaySwipeableViews
+        <AutoPlaySwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={activeStep}
           onChangeIndex={this.handleStepChange}
@@ -91,7 +91,7 @@ class SwipeableTextMobileStepper extends React.Component {
               ) : null}
             </div>
           ))}
-        </AutoPlaySwipeableViews> */}
+        </AutoPlaySwipeableViews>
         <MobileStepper
           steps={maxSteps}
           position="static"
