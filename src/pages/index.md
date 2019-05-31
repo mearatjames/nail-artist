@@ -10,11 +10,11 @@ mainpitch:
 intro:
   avatar: /images/001-nail-polish.svg
   blurbs:
-    - image: /images/products-grid2.jpg
+    - image: /images/minimalist-coral-3-.jpg
       text: Ombre
-    - image: /images/home-jumbotron.jpg
+    - image: /images/pink-glitter-nails-1-.jpg
       text: Acrylic
-    - image: /images/flavor_wheel.jpg
+    - image: /images/blue-daisy-flower-nail-art-2-.jpg
       text: Swarowski
   heading: Featured Nail Arts
 services:
