@@ -27,7 +27,7 @@ const styles = {
     marginTop: '-70px'
   },
   landingPage: {
-    height: '600px',
+    height: '300px',
     backgroundImage: `url(${BlogCover})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
