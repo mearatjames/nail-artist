@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import BlogList from "../../components/blog-list"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import SEO from "../../components/seo"
 import Layout from "../../components/Layout"
 import Grid from '@material-ui/core/Grid'

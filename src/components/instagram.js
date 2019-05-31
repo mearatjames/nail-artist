@@ -67,7 +67,7 @@ function Instagram(props) {
           </div>
         </Grid>
         <Grid item sm={6}>
-          {/* <Carousel /> */}
+          <Carousel />
         </Grid>
       </Grid>
   )

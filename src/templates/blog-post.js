@@ -1,13 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/Layout"
-import Fab from "../components/fab"
-import Booking from "../components/booking"
 import Content, { HTMLContent } from "../components/content"
 import Helmet from "react-helmet"
-import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 
 export const BlogPostTemplate = ({

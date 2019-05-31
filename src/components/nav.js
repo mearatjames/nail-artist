@@ -77,7 +77,7 @@ class NavBar extends React.Component {
             <Link
               key={index}
               style={{ textDecoration: "none" }}
-              to={text == "Home" ? "/" : "/" + text.toLowerCase()}
+              to={text === "Home" ? "/" : "/" + text.toLowerCase()}
             >
               <ListItem className={classes.center} button>
                 <ListItemText primary={text} />

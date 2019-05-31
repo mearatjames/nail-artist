@@ -80,6 +80,7 @@ class FullScreenDialog extends React.Component {
             <iframe
               height='100%'
               width='100%'
+              title='SquareAppointment'
               marginHeight="0"
               marginWidth="0"
               frameBorder='0'
