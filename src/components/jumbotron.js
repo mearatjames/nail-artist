@@ -5,33 +5,13 @@ import BlogCover from '../images/jumbotron.jpg'
 import Grid from '@material-ui/core/Grid'
 
 const styles = {
-  header: {
-    height: '85vh',
-    backgroundImage: `url(${BlogCover})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    marginTop: '-70px'
-  },
-  headerText: {
-    minWidth: '80vh',
-    minHeight: '100px',
-    textAlign: 'center',
-    display: 'grid',
-    alignItems: 'center',
-  },
-  contact: {
-    height: '101vh',
-    backgroundImage: `url(${BlogCover})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    marginTop: '-70px'
-  },
   landingPage: {
     height: '85vh',
     backgroundImage: `url(${BlogCover})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    marginTop: '-70px'
+    marginTop: '-70px',
+    overflow: 'hidden'
   }
 }
 
@@ -42,7 +22,7 @@ class Jumbotron extends Component {
         <Grid container 
           justify="center"
           alignItems="center"
-          className={this.props.landingPage? classes.landingPage: this.props.contact ? classes.contact : classes.header}>
+          className={classes.landingPage}>
           <div className={classes.headerText}>
             <Typography variant="h2">
               AiAi.91

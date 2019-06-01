@@ -8,7 +8,7 @@ import { withStyles } from "@material-ui/core/styles"
 import Typography from '@material-ui/core/Typography'
 import Pagination from "material-ui-flat-pagination"
 
-const styles = {
+const styles = theme => ({
   headerText: {
     backgroundColor: '#fcf5f5',
     minWidth: '300px',
@@ -19,9 +19,19 @@ const styles = {
   },
   background: {
     width: '100%',
-    padding: 30,
+    padding: '30px 15px',
+    margin: '0 auto',
+    [theme.breakpoints.down('sm')]: {
+      padding: '10px 0px',
+    },
+  },
+  gridItem: {
+    padding: '10px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '10px 0px',
+    },
   }
-}
+})
 
 
 
@@ -49,9 +59,9 @@ class Blog extends Component {
             </Typography>
           </div>
           <div className={classes.background}>
-              <Grid style={{maxWidth: '1024px', margin: '0 auto'}} justify='center' container spacing={16}>
+              <Grid style={{maxWidth: '1024px', margin: '0 auto'}} justify='center' container>
                 {posts.slice(this.state.offset, this.state.offset + 4).map(({ node: post }, index) => (
-                  <Grid item xs={6} sm={6} key={index}>
+                  <Grid className={classes.gridItem} item xs={12} sm={6} key={index}>
                     <BlogList post={post} />
                   </Grid>
                 ))}
