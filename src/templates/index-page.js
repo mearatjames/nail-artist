@@ -24,7 +24,8 @@ const styles = {
     margin: '5px auto',
   },
   background: {
-    backgroundColor: '#fcf5f5'
+    backgroundColor: '#fcf5f5',
+    padding: '20px 0'
   },
 }
 
@@ -107,7 +108,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                fluid(maxWidth: 640, quality: 100) {
+                fluid(maxWidth: 720, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }

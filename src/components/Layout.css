@@ -6,6 +6,9 @@ html {
 
 body {
   color: rgb(68, 68, 69);
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 80px;
 }
 
 .blog {

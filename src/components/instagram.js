@@ -8,8 +8,9 @@ import Carousel from './carousel'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: "980px",
+    maxWidth: "1024px",
     margin: '0 auto',
+    padding: '30px 0',
     minHeight: '400px',
   },
   center: {
@@ -66,7 +67,7 @@ function Instagram(props) {
             </div>
           </div>
         </Grid>
-        <Grid item sm={6}>
+        <Grid style={{padding: '0 10px'}} item sm={6}>
           <Carousel />
         </Grid>
       </Grid>

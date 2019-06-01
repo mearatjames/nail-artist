@@ -6,28 +6,28 @@ import Grid from '@material-ui/core/Grid'
 
 const styles = {
   header: {
-    height: '300px',
+    height: '85vh',
     backgroundImage: `url(${BlogCover})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     marginTop: '-70px'
   },
   headerText: {
-    minWidth: '300px',
+    minWidth: '80vh',
     minHeight: '100px',
     textAlign: 'center',
     display: 'grid',
     alignItems: 'center',
   },
   contact: {
-    height: '100vh',
+    height: '101vh',
     backgroundImage: `url(${BlogCover})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     marginTop: '-70px'
   },
   landingPage: {
-    height: '300px',
+    height: '85vh',
     backgroundImage: `url(${BlogCover})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',

@@ -9,8 +9,8 @@ import Divider from '@material-ui/core/Divider'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: '980px',
-    margin: '0 auto',
+    maxWidth: '1024px',
+    margin: '20px auto',
     backgroundColor: '#fcf5f5',
     minHeight: '400px',
   },
