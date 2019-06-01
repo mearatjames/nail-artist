@@ -27,7 +27,8 @@ const styles = theme => ({
   img: {
     height: 400,
     display: "block",
-    maxWidth: 400,
+    maxWidth: '100%',
+    width: 400,
     overflow: "hidden",
     margin: '0 auto',
     objectFit: 'cover'
