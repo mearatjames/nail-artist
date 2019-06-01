@@ -10,7 +10,7 @@ function Shop() {
     <React.Fragment>
         <SEO />
         <Layout>
-            <Jumbotron contact={true} header="Something Exciting Is Coming Soon..."/>
+            <Jumbotron shop={true} header="Something Exciting Is Coming Soon..."/>
         </Layout>
     </React.Fragment>
   );

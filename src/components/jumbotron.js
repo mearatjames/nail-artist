@@ -12,7 +12,16 @@ const styles = {
     backgroundPosition: 'center',
     marginTop: '-70px',
     overflow: 'hidden'
-  }
+  },
+  shop: {
+    height: '102vh',
+    backgroundImage: `url(${BlogCover})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    marginTop: '-70px',
+    overflow: 'hidden'
+  },
+
 }
 
 class Jumbotron extends Component {
@@ -22,12 +31,12 @@ class Jumbotron extends Component {
         <Grid container 
           justify="center"
           alignItems="center"
-          className={classes.landingPage}>
+          className={this.props.shop ? classes.shop : classes.landingPage}>
           <div className={classes.headerText}>
-            <Typography variant="h2">
+            <Typography align='center' variant="h2">
               AiAi.91
             </Typography>
-            <Typography variant="h6">
+            <Typography align='center' variant="h6">
                 {this.props.header}
             </Typography>
           </div>
