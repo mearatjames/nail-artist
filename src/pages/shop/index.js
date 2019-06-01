@@ -16,7 +16,7 @@ const Shop = ({ data }) => {
     <React.Fragment>
         <SEO />
         <Layout>
-            {console.log(context)}
+          {console.log(context)}
             <ProductGrid />
             <Badge badgeContent={lineItems.length} color="primary">
             <Fab href="./cart" color="secondary" aria-label="Cart">
