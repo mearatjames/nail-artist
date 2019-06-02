@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { withStyles } from "@material-ui/core/styles"
 import SEO from '../components/seo'
-import Layout from '../components/Layout'
 import Fab from '../components/fab'
 import Jumbotron from '../components/jumbotron'
 import Instagram from '../components/instagram'
@@ -62,7 +61,6 @@ const IndexPage = ({ data }) => {
   return (
     <React.Fragment>
       <SEO />
-      <Layout>
         <Jumbotron landingPage={true} header="Aspiring Nail Artist" />
         <IndexPageTemplate
           intro={frontmatter.intro}
@@ -72,7 +70,6 @@ const IndexPage = ({ data }) => {
           subheading={frontmatter.subheading}
           mainpitch={frontmatter.mainpitch}
         />
-      </Layout>
     </React.Fragment>
   )
 }

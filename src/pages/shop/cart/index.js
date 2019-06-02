@@ -16,8 +16,7 @@ const Cart = () => {
   })
 
   return (
-    <Layout>
-      {console.log(context)}
+    <React.Fragment>
       {line_items}
       <h2>Subtotal</h2>
       <p>$ {checkout.subtotalPrice}</p>
@@ -29,7 +28,7 @@ const Cart = () => {
       <p>$ {checkout.totalPrice}</p>
       <br />
       <button onClick={handleCheckout}>Check out</button>
-    </Layout>
+    </React.Fragment>
   )
 }
 
