@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import StoreContext from '../../../context/storeContext'
 import LineItems from './lineItems'
-import Layout from '../../../components/Layout'
 
 const Cart = () => {
   const context = useContext(StoreContext)
