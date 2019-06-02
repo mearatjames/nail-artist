@@ -17,6 +17,7 @@ const Cart = () => {
 
   return (
     <Layout>
+      {console.log(context)}
       {line_items}
       <h2>Subtotal</h2>
       <p>$ {checkout.subtotalPrice}</p>

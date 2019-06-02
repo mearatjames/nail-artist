@@ -10,6 +10,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-layout`,
+            options: {
+                component: require.resolve(`./src/components/Layout.js`)
+            }
+    },
+    {
       resolve: `gatsby-source-shopify`,
       options: {
         // The domain name of your Shopify shop. This is required.

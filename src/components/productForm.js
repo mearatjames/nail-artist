@@ -50,6 +50,7 @@ const ProductForm = props => {
 
   const handleAddToCart = () => {
     context.addVariantToCart(productVariant.shopifyId, quantity)
+    console.log(context)
   }
 
   const variantSelectors = hasVariants
@@ -66,6 +67,7 @@ const ProductForm = props => {
 
   return (
     <>
+      {console.log(context)}
       <h3>${productVariant.price}</h3>
       {variantSelectors}
       <label htmlFor="quantity">Quantity </label>

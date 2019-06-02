@@ -35,13 +35,14 @@ class Layout extends React.Component {
         return client.checkout
           .addLineItems(checkoutId, lineItemsToUpdate)
           .then(checkout => {
-            console.log('clientcheckout')
+            console.log(this.state.store)
             this.setState(state => ({
               store: {
                 ...state.store,
                 checkout,
                 adding: false,
-              },
+              }, 
+            }, () => {
             }))
           })
       },
@@ -55,7 +56,8 @@ class Layout extends React.Component {
                 checkout: res,
               },
             }))
-          })
+          }
+          )
       },
       updateLineItem: (client, checkoutID, lineItemID, quantity) => {
         const lineItemsToUpdate = [
@@ -85,7 +87,6 @@ class Layout extends React.Component {
       : null
 
     const setCheckoutInState = checkout => {
-      console.log('setCheckout')
       if (isBrowser) {
         localStorage.setItem("shopify_checkout_id", checkout.id)
       }
@@ -95,7 +96,9 @@ class Layout extends React.Component {
           ...state.store,
           checkout,
         },
-      }))
+      }), () => {
+        console.log(this.state)
+      })
     }
 
     const createNewCheckout = () => this.state.store.client.checkout.create()

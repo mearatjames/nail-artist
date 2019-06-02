@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import StoreContext from '../context/storeContext'
@@ -7,13 +7,14 @@ import Layout from '../components/Layout'
 
 const ProductPage = ({ data }) => {
   const context = useContext(StoreContext)
+  const [test, setTest] = useState(context);
   const product = data.shopifyProduct
     return (
-        <Layout>
+        <div>
             <h1>{product.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
             <ProductForm product={product} />
-        </Layout>
+        </div>
     //   <Flex flexWrap='wrap'>
     //     <Box pr={[null, 3]} width={[1, 1/2]}>
     //       {product.images.map(x => (

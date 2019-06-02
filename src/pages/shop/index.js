@@ -15,15 +15,12 @@ const Shop = ({ data }) => {
   return (
     <React.Fragment>
         <SEO />
-        <Layout>
-          {console.log(context)}
             <ProductGrid />
             <Badge badgeContent={lineItems.length} color="primary">
             <Fab href="./cart" color="secondary" aria-label="Cart">
               <CartIcon />
             </Fab>
         </Badge>
-        </Layout>
     </React.Fragment>
     // <Flex flexWrap='wrap'>
     //   <Box pr={[null, 3]} width={[1, 1/2]}>
