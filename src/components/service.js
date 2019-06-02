@@ -9,10 +9,11 @@ import Divider from '@material-ui/core/Divider'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: '980px',
+    maxWidth: '1024px',
+    padding: '0px 0px 25px 0px',
     margin: '0 auto',
     backgroundColor: '#fcf5f5',
-    minHeight: '400px',
+    minHeight: '360px',
   },
   bigAvatar: {
     margin: '10px auto',
@@ -26,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     textAlign: 'center',
-    height: '80px',
+    height: '40px',
     paddingTop: '20px',
   },
   center: {
@@ -62,7 +63,7 @@ function Service(props) {
             </Typography>
           </Grid>      
         ))}
-        <Grid alignContent='center' className={classes.button} item xs={12}>
+        <Grid alignContent='bottom' className={classes.button} item xs={12}>
           <Button target="blank" href='https://square.site/book/WPQDGP4CS4ZWG/nail-spa-demo-santa-maria-ca' variant="contained" color="primary">
             View Full List of Services
           </Button>

@@ -6,19 +6,11 @@ import Layout from "../../components/Layout"
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from "@material-ui/core/styles"
 import Typography from '@material-ui/core/Typography'
-import BlogCover from '../../images/jumbotron.jpg'
 import Pagination from "material-ui-flat-pagination"
 
-const styles = {
-  header: {
-    height: '300px',
-    backgroundImage: `url(${BlogCover})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    marginTop: '-70px'
-  },
+const styles = theme => ({
   headerText: {
-    backgroundColor: 'rgba(254, 244, 244, 0.7)',
+    backgroundColor: '#fcf5f5',
     minWidth: '300px',
     minHeight: '100px',
     textAlign: 'center',
@@ -26,10 +18,20 @@ const styles = {
     alignItems: 'center',
   },
   background: {
-    paddingBottom: 20,
-    backgroundColor: '#fcf5f5'
+    width: '100%',
+    padding: '30px 15px',
+    margin: '0 auto',
+    [theme.breakpoints.down('sm')]: {
+      padding: '10px 0px',
+    },
+  },
+  gridItem: {
+    padding: '10px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '10px 0px',
+    },
   }
-}
+})
 
 
 
@@ -51,27 +53,21 @@ class Blog extends Component {
       <React.Fragment>
         <SEO />
         <Layout>
-          <Grid container 
-          justify="center"
-          alignItems="center"
-          className={classes.header}
-          >
           <div className={classes.headerText}>
-            <Typography style={{opacity: 1}} variant="h2">
+            <Typography variant="h2">
               AiAi's Blog
             </Typography>
           </div>
-          </Grid>
           <div className={classes.background}>
-              <Grid justify='center' container>
+              <Grid style={{maxWidth: '1024px', margin: '0 auto'}} justify='center' container>
                 {posts.slice(this.state.offset, this.state.offset + 4).map(({ node: post }, index) => (
-                  <Grid style={{margin: '10px'}} item key={index}>
+                  <Grid className={classes.gridItem} item xs={12} sm={6} key={index}>
                     <BlogList post={post} />
                   </Grid>
                 ))}
               </Grid>
           </div>
-          <Grid item style={{textAlign: 'center'}} xs={12}>
+          <Grid item style={{textAlign: 'center', padding: 10}} xs={12}>
             <Pagination
               limit={4}
               offset={this.state.offset}

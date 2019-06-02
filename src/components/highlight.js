@@ -4,20 +4,20 @@ import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 import Grid from "@material-ui/core/Grid"
-import Img from "gatsby-image"
 import Typography from "@material-ui/core/Typography"
 import Avatar from "@material-ui/core/Avatar"
 import Select from "@material-ui/core/Select"
 import MenuItem from "@material-ui/core/MenuItem"
 import Hidden from "@material-ui/core/Hidden"
 import Paper from '@material-ui/core/Paper'
+import PreviewCompatibleImage from "./PreviewCompatibleImage"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: "980px",
+    maxWidth: "1024px",
     backgroundColor: "#fcf5f5",
     margin: '0 auto',
-    minHeight: '400px'
+    padding: '15px 0'
   },
   list: {
     maxWidth: "400px",
@@ -41,6 +41,9 @@ const useStyles = makeStyles(theme => ({
   select: {
     maxWidth: 300,
     margin: '15px auto',
+  },
+  image: {
+    boxShadow: "-2px 10px 52px -16px rgba(0,0,0,0.56)",
   }
 }))
 
@@ -64,13 +67,15 @@ function Highlight(props) {
         container
         className={classes.root}
       >
-        <Grid item xs={12} sm={6}>
-          <Img
-            fluid={
-              !!props.intro.blurbs[selectedIndex].image.childImageSharp ? props.intro.blurbs[selectedIndex].image.childImageSharp.fluid : props.intro.blurbs[selectedIndex].image
-            }
-            alt={props.intro.blurbs[selectedIndex].text}
-          />
+        <Grid style={{padding: '0 10px'}} item xs={12} sm={6}>
+          <Paper elevation={4}>
+            <PreviewCompatibleImage
+              imageInfo={{
+                image: props.intro.blurbs[selectedIndex].image,
+                alt: props.intro.blurbs[selectedIndex].text,
+              }}
+            />
+          </Paper>
         </Grid>
         <Grid item xs={12} sm={6} alignContent="center">
           <Avatar

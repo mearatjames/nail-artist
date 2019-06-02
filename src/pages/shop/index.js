@@ -1,6 +1,5 @@
 import React, { useContext }from 'react';
 import SEO from "../../components/seo"
-import Layout from "../../components/Layout"
 import ProductGrid from "../../components/productGrid"
 import Fab from '@material-ui/core/Fab'
 import CartIcon from '@material-ui/icons/ShoppingCart'

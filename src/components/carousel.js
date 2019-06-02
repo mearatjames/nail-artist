@@ -25,12 +25,19 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.default,
   },
   img: {
-    height: 255,
+    height: 400,
     display: "block",
-    maxWidth: 400,
+    maxWidth: '100%',
+    width: 400,
     overflow: "hidden",
-    margin: '0 auto'
+    margin: '0 auto',
+    objectFit: 'cover'
   },
+  carousel: {
+    overflowY: 'hidden',
+    overflowX: 'hidden',
+    height: 400,
+  }
 })
 
 class SwipeableTextMobileStepper extends React.Component {
@@ -73,6 +80,7 @@ class SwipeableTextMobileStepper extends React.Component {
     return (
       <Paper className={classes.root}>
         <AutoPlaySwipeableViews
+          className={classes.carousel}
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={activeStep}
           onChangeIndex={this.handleStepChange}
