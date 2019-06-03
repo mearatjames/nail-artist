@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
-import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/content"
 import Helmet from "react-helmet"
 import Typography from "@material-ui/core/Typography"
@@ -22,10 +21,15 @@ export const BlogPostTemplate = ({
       style={{ margin: "20px auto 10px auto", maxWidth: "768px", width: "80%" }}
     >
       <div>
-        <Typography align='center' color="primary" component="h4" variant="h3" gutterBottom>
+        <Typography align="center" color="primary" variant="h3" gutterBottom>
           {title}
         </Typography>
-        <Typography align='center' color="textSecondary" variant="subtitle1" gutterBottom>
+        <Typography
+          align="center"
+          color="textSecondary"
+          variant="subtitle1"
+          gutterBottom
+        >
           {description}
         </Typography>
       </div>
@@ -48,25 +52,22 @@ const BlogPost = ({ data }) => {
   return (
     <React.Fragment>
       <SEO />
-      <Layout>
-        {console.log(post)}
-        <BlogPostTemplate
-          content={post.html}
-          contentComponent={HTMLContent}
-          description={post.frontmatter.description}
-          helmet={
-            <Helmet titleTemplate="%s | Blog">
-              <title>{`${post.frontmatter.title}`}</title>
-              <meta
-                name="description"
-                content={`${post.frontmatter.description}`}
-              />
-            </Helmet>
-          }
-          tags={post.frontmatter.tags}
-          title={post.frontmatter.title}
-        />
-      </Layout>
+      <BlogPostTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        description={post.frontmatter.description}
+        helmet={
+          <Helmet titleTemplate="%s | Blog">
+            <title>{`${post.frontmatter.title}`}</title>
+            <meta
+              name="description"
+              content={`${post.frontmatter.description}`}
+            />
+          </Helmet>
+        }
+        tags={post.frontmatter.tags}
+        title={post.frontmatter.title}
+      />
     </React.Fragment>
   )
 }

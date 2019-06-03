@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { withStyles } from "@material-ui/core/styles"
 import TextField from "@material-ui/core/TextField"
 import SEO from "../../components/seo"
-import Layout from "../../components/Layout"
 import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
@@ -23,14 +22,13 @@ const styles = theme => ({
     width: 200,
   },
   headerText: {
-    backgroundColor: 'rgba(254, 244, 244, 0.7)',
-    minWidth: '300px',
-    minHeight: '100px',
-    textAlign: 'center',
-    display: 'grid',
-    alignItems: 'center',
+    backgroundColor: "rgba(254, 244, 244, 0.7)",
+    minWidth: "300px",
+    minHeight: "100px",
+    textAlign: "center",
+    display: "grid",
+    alignItems: "center",
   },
-
 })
 
 function encode(data) {
@@ -73,71 +71,67 @@ class Contact extends Component {
     return (
       <React.Fragment>
         <SEO />
-        <Layout>
-          <div className={classes.headerText}>
-            <Typography style={{ opacity: 1 }} variant="h2">
-              Contact
-            </Typography>
-          </div>
-          <Paper
-            style={{ margin: "30px auto", padding: 20, maxWidth: "968px" }}
+        <div className={classes.headerText}>
+          <Typography style={{ opacity: 1 }} variant="h2">
+            Contact
+          </Typography>
+        </div>
+        <Paper style={{ margin: "30px auto", padding: 20, maxWidth: "968px" }}>
+          <form
+            name="contact"
+            action="/contact/thanks"
+            method="post"
+            data-netlify="true"
+            className={classes.container}
+            autoComplete="off"
+            onSubmit={this.handleSubmit}
           >
-            <form
-              name="contact"
-              action="/contact/thanks"
-              method="post"
-              data-netlify="true"
-              className={classes.container}
-              autoComplete="off"
-              onSubmit={this.handleSubmit}
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <Typography variant="h4">Get In Touch</Typography>
-              <TextField
-                id="name"
-                label="Name"
-                type="text"
-                name="name"
-                required
-                fullWidth
-                className={classes.textField}
-                onChange={this.handleChange("name")}
-                margin="normal"
-              />
-              <TextField
-                id="email"
-                name="email"
-                required
-                fullWidth
-                label="Email"
-                type="email"
-                className={classes.textField}
-                onChange={this.handleChange("email")}
-                margin="normal"
-              />
+            <input type="hidden" name="form-name" value="contact" />
+            <Typography variant="h4">Get In Touch</Typography>
+            <TextField
+              id="name"
+              label="Name"
+              type="text"
+              name="name"
+              required
+              fullWidth
+              className={classes.textField}
+              onChange={this.handleChange("name")}
+              margin="normal"
+            />
+            <TextField
+              id="email"
+              name="email"
+              required
+              fullWidth
+              label="Email"
+              type="email"
+              className={classes.textField}
+              onChange={this.handleChange("email")}
+              margin="normal"
+            />
 
-              <TextField
-                id="message"
-                label="Message"
-                name="message"
-                multiline
-                variant="outlined"
-                required
-                fullWidth
-                rows="6"
-                placeholder="Message"
-                margin="normal"
-                onChange={this.handleChange("message")}
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              />
-              <Button type="submit" variant="contained" color="secondary">
-                Send
-              </Button>
-            </form>
-          </Paper>
-        </Layout>
+            <TextField
+              id="message"
+              label="Message"
+              name="message"
+              multiline
+              variant="outlined"
+              required
+              fullWidth
+              rows="6"
+              placeholder="Message"
+              margin="normal"
+              onChange={this.handleChange("message")}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+            <Button type="submit" variant="contained" color="secondary">
+              Send
+            </Button>
+          </form>
+        </Paper>
       </React.Fragment>
     )
   }

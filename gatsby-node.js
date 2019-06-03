@@ -7,6 +7,13 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
   {
+    allShopifyProduct {
+      edges {
+        node {
+          handle
+        }
+      }
+    }
     allMarkdownRemark {
       edges {
         node {
@@ -26,6 +33,18 @@ exports.createPages = ({ actions, graphql }) => {
       result.errors.forEach(e => console.error(e.toString()))
       return Promise.reject(result.errors)
     }
+
+    result.data.allShopifyProduct.edges.forEach(({ node }) => {
+      createPage({
+        path: `shop/product/${node.handle}/`,
+        component: path.resolve(`src/templates/product-page.js`),
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          handle: node.handle,
+        },
+      })
+    })
 
     const posts = result.data.allMarkdownRemark.edges
 

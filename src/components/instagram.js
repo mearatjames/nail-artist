@@ -44,7 +44,7 @@ function Instagram(props) {
               alt="Remy Sharp"
               src={IgAvatar}
             />
-            <Typography className={classes.inLine} color="primary" variant="h5" gutterBottom>Latest Instagram Feeds</Typography>
+            <Typography className={classes.inLine} color="primary" variant="h5" gutterBottom={true}>Latest Instagram Feeds</Typography>
             <Typography className={classes.inLine} color="textSecondary" variant="subtitle1">
               Curious about what I have been up to?
             </Typography>
