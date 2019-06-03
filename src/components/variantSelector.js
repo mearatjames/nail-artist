@@ -1,16 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
 const VariantSelector = props => {
   const { option } = props
   return (
     <>
       <label htmlFor={option.name}>{option.name} </label>
-      <select
-        name={option.name}
-        key={option.id}
-        onChange={props.onChange}
-      >
+      <select name={option.name} key={option.id} onChange={props.onChange}>
         {option.values.map(value => {
           return (
             <option
@@ -20,7 +16,7 @@ const VariantSelector = props => {
           )
         })}
       </select>
-      <br/>
+      <br />
     </>
   )
 }

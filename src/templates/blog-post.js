@@ -21,12 +21,7 @@ export const BlogPostTemplate = ({
       style={{ margin: "20px auto 10px auto", maxWidth: "768px", width: "80%" }}
     >
       <div>
-        <Typography
-          align="center"
-          color="primary"
-          variant="h3"
-          gutterBottom
-        >
+        <Typography align="center" color="primary" variant="h3" gutterBottom>
           {title}
         </Typography>
         <Typography

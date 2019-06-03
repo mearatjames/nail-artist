@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react"
-import PropTypes from "prop-types"
 import StoreContext from "../context/storeContext"
 import VariantSelector from "./variantSelector"
 import { makeStyles } from "@material-ui/styles"
@@ -10,7 +9,7 @@ import Paper from "@material-ui/core/Paper"
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
 import TextField from "@material-ui/core/TextField"
 import BackIcon from "@material-ui/icons/ArrowBackIos"
-import { Link } from 'gatsby'
+import { Link } from "gatsby"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -126,23 +125,29 @@ const ProductForm = props => {
       >
         <Grid style={{ padding: "0 10px" }} item xs={12} sm={6}>
           <Paper elevation={4}>
-          <div style={{height: 400}}>
-            <PreviewCompatibleImage
-              imageInfo={{
-                image: props.product.images[0].localFile,
-                alt: props.product.title,
-              }}
-            />
-          </div>
+            <div style={{ height: 400 }}>
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: props.product.images[0].localFile,
+                  alt: props.product.title,
+                }}
+              />
+            </div>
           </Paper>
         </Grid>
-        <Grid style={{padding: 15}} item xs={12} sm={6} alignContent="center">
-            <Link to='/shop' style={{textDecoration: 'none'}}>
-          <Button variant="outlined">
-          <BackIcon />
-          Back to product list</Button>
-            </Link>
-          <Typography style={{paddingTop: 20}} color="primary" variant="h5" gutterBottom>
+        <Grid style={{ padding: 15 }} item xs={12} sm={6} alignContent="center">
+          <Link to="/shop" style={{ textDecoration: "none" }}>
+            <Button variant="outlined">
+              <BackIcon />
+              Back to product list
+            </Button>
+          </Link>
+          <Typography
+            style={{ paddingTop: 20 }}
+            color="primary"
+            variant="h5"
+            gutterBottom
+          >
             {props.product.title}
           </Typography>
           <div
@@ -196,45 +201,5 @@ const ProductForm = props => {
     </>
   )
 }
-
-// ProductForm.propTypes = {
-//   product: PropTypes.shape({
-//     descriptionHtml: PropTypes.string,
-//     handle: PropTypes.string,
-//     id: PropTypes.string,
-//     shopifyId: PropTypes.string,
-//     images: PropTypes.arrayOf(
-//       PropTypes.shape({
-//         id: PropTypes.string,
-//         originalSrc: PropTypes.string,
-//       })
-//     ),
-//     options: PropTypes.arrayOf(
-//       PropTypes.shape({
-//         id: PropTypes.string,
-//         name: PropTypes.string,
-//         values: PropTypes.arrayOf(PropTypes.string),
-//       })
-//     ),
-//     productType: PropTypes.string,
-//     title: PropTypes.string,
-//     variants: PropTypes.arrayOf(
-//       PropTypes.shape({
-//         availableForSale: PropTypes.bool,
-//         id: PropTypes.string,
-//         price: PropTypes.string,
-//         title: PropTypes.string,
-//         shopifyId: PropTypes.string,
-//         selectedOptions: PropTypes.arrayOf(
-//           PropTypes.shape({
-//             name: PropTypes.string,
-//             value: PropTypes.string,
-//           })
-//         ),
-//       })
-//     ),
-//   }),
-//   addVariantToCart: PropTypes.func,
-// }
 
 export default ProductForm

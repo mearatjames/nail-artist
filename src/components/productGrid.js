@@ -19,31 +19,31 @@ const styles = theme => ({
     textDecoration: "none",
   },
   flex: {
-    display: 'flex',
-    justifyContent: 'space-between'
+    display: "flex",
+    justifyContent: "space-between",
   },
   truncate: {
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   },
   image: {
-    marginTop: '-10px',
-    marginLeft: '-10px',
-    marginRight: '-10px',
-    width: '100%',
-    height: '300px'
+    marginTop: "-10px",
+    marginLeft: "-10px",
+    marginRight: "-10px",
+    width: "100%",
+    height: "300px",
   },
   itemSpace: {
-    height: '100%',
-    width: '100%',
+    height: "100%",
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
   },
   space: {
-    padding: '10px 0px',
-  }
+    padding: "10px 0px",
+  },
 })
 
 const ProductGrid = props => {
@@ -84,46 +84,46 @@ const ProductGrid = props => {
       {data.allShopifyProduct.edges.map((item, index) => (
         <Grid className={classes.gridItem} item xs={12} sm={4} key={index}>
           {console.log(item)}
-          <Paper style={{padding: 15, height: '100%'}}>
+          <Paper style={{ padding: 15, height: "100%" }}>
             <Link
               className={classes.link}
               to={`shop/product/${item.node.handle}/`}
             >
-            <div className={classes.itemSpace}>
-            <div>
-            <div className={classes.image}>
-            <PreviewCompatibleImage
-              imageInfo={{
-                image: item.node.images[0].localFile,
-                alt: item.node.title,
-              }}
-            />
-            </div>
-              <Divider />
-              <div className={classes.space}>
-                <Typography color="primary" variant="body1" gutterBottom>
-                  {item.node.title}
-                </Typography>
-              </div>
-              </div>
-              <div className={classes.flex}>
-                <div style={{display: 'inline'}}>
-                <Typography
-                  style={{ paddingRight: 5 }}
-                  inline={true}
-                  color="textSecondary"
-                  variant="h6"
-                >
-                  USD
-                </Typography>
-                <Typography inline={true} color="primary" variant="h6">
-                  {item.node.variants[0].price}
-                </Typography>
+              <div className={classes.itemSpace}>
+                <div>
+                  <div className={classes.image}>
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: item.node.images[0].localFile,
+                        alt: item.node.title,
+                      }}
+                    />
+                  </div>
+                  <Divider />
+                  <div className={classes.space}>
+                    <Typography color="primary" variant="body1" gutterBottom>
+                      {item.node.title}
+                    </Typography>
+                  </div>
                 </div>
-                <Button size='small' className={classes.button}>
-                  View Details
-                </Button>
-              </div>
+                <div className={classes.flex}>
+                  <div style={{ display: "inline" }}>
+                    <Typography
+                      style={{ paddingRight: 5 }}
+                      inline={true}
+                      color="textSecondary"
+                      variant="h6"
+                    >
+                      USD
+                    </Typography>
+                    <Typography inline={true} color="primary" variant="h6">
+                      {item.node.variants[0].price}
+                    </Typography>
+                  </div>
+                  <Button size="small" className={classes.button}>
+                    View Details
+                  </Button>
+                </div>
               </div>
             </Link>
           </Paper>

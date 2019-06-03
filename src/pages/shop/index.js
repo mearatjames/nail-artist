@@ -53,22 +53,6 @@ const Shop = props => {
         </Badge>
       </Link>
     </React.Fragment>
-    // <Flex flexWrap='wrap'>
-    //   <Box pr={[null, 3]} width={[1, 1/2]}>
-    //     {product.images.map(x => (
-    //       <Img
-    //         fluid={x.localFile.childImageSharp.fluid}
-    //         key={x.id}
-    //         alt={product.title}
-    //       />
-    //     ))}
-    //   </Box>
-    //   <Box width={[1, 1/2]}>
-    //     <h1>{product.title}</h1>
-    //     <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
-    //     <ProductForm product={product} />
-    //   </Box>
-    // </Flex >
   )
 }
 

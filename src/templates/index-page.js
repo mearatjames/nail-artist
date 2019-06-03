@@ -1,75 +1,70 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import React from "react"
+import PropTypes from "prop-types"
+import { graphql } from "gatsby"
 import { withStyles } from "@material-ui/core/styles"
-import SEO from '../components/seo'
-import Fab from '../components/fab'
-import Jumbotron from '../components/jumbotron'
-import Instagram from '../components/instagram'
-import GoogleMap from '../components/map'
-import Highlight from '../components/highlight'
-import Service from '../components/service'
-import MainPitch from '../components/mainPitch';
-
+import SEO from "../components/seo"
+import Fab from "../components/fab"
+import Jumbotron from "../components/jumbotron"
+import Instagram from "../components/instagram"
+import GoogleMap from "../components/map"
+import Highlight from "../components/highlight"
+import Service from "../components/service"
+import MainPitch from "../components/mainPitch"
 
 const styles = {
   center: {
-    display: 'grid',
-    justifyItems: 'center',
-    alignItems: 'center',
+    display: "grid",
+    justifyItems: "center",
+    alignItems: "center",
   },
   inLine: {
-    textAlign: 'center',
-    margin: '5px auto',
+    textAlign: "center",
+    margin: "5px auto",
   },
   background: {
-    backgroundColor: '#fcf5f5',
-    padding: '20px 0'
+    backgroundColor: "#fcf5f5",
+    padding: "20px 0",
   },
 }
-
 
 function PageTemplate(props) {
   const { classes } = props
 
   return (
     <div>
-        <MainPitch mainpitch={props.mainpitch} />
-        <div className={classes.background}>
-          <Highlight
-            intro={props.intro}
-           />
-        </div>
-        <div>
-          <Instagram />
-        </div>
-        <div className={classes.background}>
-          <Service services={props.services} />
-        </div>
-        <GoogleMap />
-        <Fab />
+      <MainPitch mainpitch={props.mainpitch} />
+      <div className={classes.background}>
+        <Highlight intro={props.intro} />
       </div>
-  )  
+      <div>
+        <Instagram />
+      </div>
+      <div className={classes.background}>
+        <Service services={props.services} />
+      </div>
+      <GoogleMap />
+      <Fab />
+    </div>
+  )
 }
 
 export const IndexPageTemplate = withStyles(styles)(PageTemplate)
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  
 
   return (
     <React.Fragment>
       <SEO />
-        <Jumbotron landingPage={true} header="Aspiring Nail Artist" />
-        <IndexPageTemplate
-          intro={frontmatter.intro}
-          services={frontmatter.services}
-          title={frontmatter.title}
-          heading={frontmatter.heading}
-          subheading={frontmatter.subheading}
-          mainpitch={frontmatter.mainpitch}
-        />
+      <Jumbotron landingPage={true} header="Aspiring Nail Artist" />
+      <IndexPageTemplate
+        intro={frontmatter.intro}
+        services={frontmatter.services}
+        title={frontmatter.title}
+        heading={frontmatter.heading}
+        subheading={frontmatter.subheading}
+        mainpitch={frontmatter.mainpitch}
+      />
     </React.Fragment>
   )
 }
@@ -121,4 +116,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
