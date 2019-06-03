@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react"
-import StoreContext from "../../../../context/storeContext"
+import StoreContext from "../context/storeContext"
 import ListItem from "@material-ui/core/ListItem"
 import Divider from "@material-ui/core/Divider"
 import ListItemText from "@material-ui/core/ListItemText"
@@ -32,7 +32,7 @@ const LineItem = props => {
   const classes = useStyles()
   const context = useContext(StoreContext)
   const { line_item } = props
-  const [quantity, setQuantity] = useState()
+  const [quantity, setQuantity] = useState(line_item.quantity)
 
   const handleRemove = () => {
     context.removeLineItem(context.client, context.checkout.id, line_item.id)

@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import StoreContext from "../../../context/storeContext"
-import LineItems from "./lineItems"
+import LineItems from "../../../components/lineItems"
 import List from "@material-ui/core/List"
 import { withStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
