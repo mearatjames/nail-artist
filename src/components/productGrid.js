@@ -6,7 +6,7 @@ import Divider from "@material-ui/core/Divider"
 import Typography from "@material-ui/core/Typography"
 import { withStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
-
+import PreviewCompatibleImage from "./PreviewCompatibleImage"
 
 const styles = theme => ({
   gridItem: {
@@ -31,7 +31,8 @@ const styles = theme => ({
     marginTop: '-10px',
     marginLeft: '-10px',
     marginRight: '-10px',
-
+    width: '100%',
+    height: '300px'
   },
   itemSpace: {
     height: '100%',
@@ -82,6 +83,7 @@ const ProductGrid = props => {
     <Grid style={{ maxWidth: "1024px" }} justify="center" container>
       {data.allShopifyProduct.edges.map((item, index) => (
         <Grid className={classes.gridItem} item xs={12} sm={4} key={index}>
+          {console.log(item)}
           <Paper style={{padding: 15, height: '100%'}}>
             <Link
               className={classes.link}
@@ -89,21 +91,20 @@ const ProductGrid = props => {
             >
             <div className={classes.itemSpace}>
             <div>
-              <img
-                className={classes.image}
-                width="100%"
-                src="./images/bubble-up.png"
-                alt="placeholder"
-              />
+            <div className={classes.image}>
+            <PreviewCompatibleImage
+              imageInfo={{
+                image: item.node.images[0].localFile,
+                alt: item.node.title,
+              }}
+            />
+            </div>
               <Divider />
               <div className={classes.space}>
                 <Typography color="primary" variant="body1" gutterBottom>
                   {item.node.title}
                 </Typography>
               </div>
-              <Typography className={classes.space} color="textPrimary" variant="subtitle" gutterBottom>
-                Item Description Text. Longer Text description
-              </Typography>
               </div>
               <div className={classes.flex}>
                 <div style={{display: 'inline'}}>
@@ -116,7 +117,7 @@ const ProductGrid = props => {
                   USD
                 </Typography>
                 <Typography inline={true} color="primary" variant="h6">
-                  20.00
+                  {item.node.variants[0].price}
                 </Typography>
                 </div>
                 <Button size='small' className={classes.button}>

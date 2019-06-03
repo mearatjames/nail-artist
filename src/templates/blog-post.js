@@ -24,7 +24,6 @@ export const BlogPostTemplate = ({
         <Typography
           align="center"
           color="primary"
-          component="h4"
           variant="h3"
           gutterBottom
         >

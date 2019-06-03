@@ -35,14 +35,12 @@ class Layout extends React.Component {
         return client.checkout
           .addLineItems(checkoutId, lineItemsToUpdate)
           .then(checkout => {
-            console.log(this.state.store)
             this.setState(state => ({
               store: {
                 ...state.store,
                 checkout,
                 adding: false,
               }, 
-            }, () => {
             }))
           })
       },
@@ -80,7 +78,6 @@ class Layout extends React.Component {
 
   async initializeCheckout() {
     // Check for an existing cart.
-    console.log('init')
     const isBrowser = typeof window !== "undefined"
     const existingCheckoutID = isBrowser
       ? localStorage.getItem("shopify_checkout_id")
@@ -110,7 +107,6 @@ class Layout extends React.Component {
 
         // Make sure this cart hasn’t already been purchased.
         if (!checkout.completedAt) {
-          console.log('fetch')
           setCheckoutInState(checkout)
           return
         }

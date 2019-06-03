@@ -49,7 +49,7 @@ function SimpleCard(props) {
         <Typography className={classes.pos} color="textSecondary">
           {frontmatter.date}
         </Typography>
-        <Typography component="p">{props.post.excerpt}</Typography>
+        <Typography variant='body1'>{props.post.excerpt}</Typography>
       </CardContent>
       <CardActions>
         <Button color="secondary" href={props.post.fields.slug} size="small">

@@ -3,50 +3,45 @@ import PropTypes from "prop-types"
 import StoreContext from "../context/storeContext"
 import VariantSelector from "./variantSelector"
 import { makeStyles } from "@material-ui/styles"
-import List from "@material-ui/core/List"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemText from "@material-ui/core/ListItemText"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
-import Select from "@material-ui/core/Select"
-import MenuItem from "@material-ui/core/MenuItem"
-import Hidden from "@material-ui/core/Hidden"
+import Button from "@material-ui/core/Button"
 import Paper from "@material-ui/core/Paper"
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
+import TextField from "@material-ui/core/TextField"
+import BackIcon from "@material-ui/icons/ArrowBackIos"
+import { Link } from 'gatsby'
 
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: "1024px",
-    backgroundColor: "#fcf5f5",
-    margin: '0 auto',
-    padding: '15px 0'
-  },
-  list: {
-    maxWidth: "400px",
-    minWidth: "200px",
     margin: "0 auto",
-  },
-  listItem: {
-    "&:hover": {
-      color: "red",
-    },
-  },
-  listItemSelected: {
-    boxShadow: "-2px 10px 52px -16px rgba(0,0,0,0.56)",
-    backgroundColor: "white !important",
-    color: "#ff5957",
+    padding: "15px 0",
   },
   center: {
     margin: "0 auto",
     marginTop: 15,
   },
-  select: {
-    maxWidth: 300,
-    margin: '15px auto',
-  },
   image: {
     boxShadow: "-2px 10px 52px -16px rgba(0,0,0,0.56)",
-  }
+  },
+  flex: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  itemSpace: {
+    height: "100%",
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+  space: {
+    padding: "10px 0px",
+  },
+  qty: {
+    maxWidth: "80px",
+  },
 }))
 
 const ProductForm = props => {
@@ -106,7 +101,6 @@ const ProductForm = props => {
 
   const handleAddToCart = () => {
     context.addVariantToCart(productVariant.shopifyId, quantity)
-    console.log(context)
   }
 
   const variantSelectors = hasVariants
@@ -123,8 +117,8 @@ const ProductForm = props => {
 
   return (
     <>
+      {console.log(props)}
       <Grid
-        wrap="wrap-reverse"
         direction="row"
         alignItems="center"
         container
@@ -132,75 +126,73 @@ const ProductForm = props => {
       >
         <Grid style={{ padding: "0 10px" }} item xs={12} sm={6}>
           <Paper elevation={4}>
+          <div style={{height: 400}}>
             <PreviewCompatibleImage
               imageInfo={{
-                image: props.intro.blurbs[selectedIndex].image,
-                alt: props.intro.blurbs[selectedIndex].text,
+                image: props.product.images[0].localFile,
+                alt: props.product.title,
               }}
             />
+          </div>
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={6} alignContent="center">
-          <Avatar
-            alt={props.intro.heading}
-            src={"/images/" + props.intro.avatar.relativePath}
-            className={classes.center}
-          />
-          <Typography align="center" color="primary" variant="h5" gutterBottom>
-            {props.intro.heading}
+        <Grid style={{padding: 15}} item xs={12} sm={6} alignContent="center">
+            <Link to='/shop' style={{textDecoration: 'none'}}>
+          <Button variant="outlined">
+          <BackIcon />
+          Back to product list</Button>
+            </Link>
+          <Typography style={{paddingTop: 20}} color="primary" variant="h5" gutterBottom>
+            {props.product.title}
           </Typography>
-          <Hidden smUp>
-            <Paper className={classes.select}>
-              <Select
-                value={selectedIndex}
-                onChange={handleChange}
-                style={{ minWidth: 200, display: "flex" }}
+          <div
+            dangerouslySetInnerHTML={{ __html: props.product.descriptionHtml }}
+          />
+          <div className={classes.flex}>
+            <div>
+              <Typography
+                style={{ paddingRight: 5 }}
+                inline={true}
+                color="textSecondary"
+                variant="h6"
               >
-                {props.intro.blurbs.map((item, index) => (
-                  <MenuItem key={index} value={index}>
-                    {item.text}
-                  </MenuItem>
-                ))}
-              </Select>
-            </Paper>
-          </Hidden>
-          <Hidden xsDown>
-            <List component="ul" className={classes.list}>
-              {props.intro.blurbs.map((item, index) => (
-                <ListItem
-                  className={classes.listItem}
-                  classes={{
-                    selected: classes.listItemSelected,
-                  }}
-                  key={index}
-                  button
-                  selected={selectedIndex === index}
-                  onClick={event => handleListItemClick(event, index)}
-                >
-                  <ListItemText primary={item.text} />
-                </ListItem>
-              ))}
-            </List>
-          </Hidden>
+                USD
+              </Typography>
+              <Typography inline={true} color="primary" variant="h6">
+                {productVariant.price}
+              </Typography>
+            </div>
+          </div>
+          <div>
+            <TextField
+              id="qty"
+              label="QTY"
+              onChange={handleQuantityChange}
+              value={quantity}
+              className={classes.qty}
+              type="number"
+              margin="normal"
+              variant="filled"
+            />
+          </div>
+          {variantSelectors}
+          <Button
+            color="primary"
+            variant="contained"
+            size="large"
+            type="submit"
+            disabled={!available}
+            onClick={handleAddToCart}
+          >
+            Add to Cart
+          </Button>
+          {!available && (
+            <Typography color="primary" variant="body1">
+              This Product is out of Stock!
+            </Typography>
+          )}
         </Grid>
       </Grid>
-      <h3>${productVariant.price}</h3>
-      {variantSelectors}
-      <label htmlFor="quantity">Quantity </label>
-      <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
-      />
-      <br />
-      <button type="submit" disabled={!available} onClick={handleAddToCart}>
-        Add to Cart
-      </button>
-      {!available && <p>This Product is out of Stock!</p>}
     </>
   )
 }
