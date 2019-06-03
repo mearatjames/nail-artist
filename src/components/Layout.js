@@ -13,7 +13,6 @@ class Layout extends React.Component {
     store: {
       ...defaultStoreContext,
       addVariantToCart: (variantId, quantity) => {
-        console.log('here')
         if (variantId === "" || !quantity) {
           console.error("Both a size and quantity are required.")
           return
@@ -93,9 +92,7 @@ class Layout extends React.Component {
           ...state.store,
           checkout,
         },
-      }), () => {
-        console.log(this.state)
-      })
+      }))
     }
 
     const createNewCheckout = () => this.state.store.client.checkout.create()

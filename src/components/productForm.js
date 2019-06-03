@@ -116,7 +116,6 @@ const ProductForm = props => {
 
   return (
     <>
-      {console.log(props)}
       <Grid
         direction="row"
         alignItems="center"
