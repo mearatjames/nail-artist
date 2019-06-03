@@ -32,7 +32,7 @@ const LineItem = props => {
   const classes = useStyles()
   const context = useContext(StoreContext)
   const { line_item } = props
-  const [quantity, setQuantity] = useState(line_item.quantity)
+  const [quantity, setQuantity] = useState()
 
   const handleRemove = () => {
     context.removeLineItem(context.client, context.checkout.id, line_item.id)
