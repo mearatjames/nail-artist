@@ -85,7 +85,7 @@ class FullScreenDialog extends React.Component {
               marginWidth="0"
               frameBorder='0'
               onLoad={this.hideSpinner}
-              src='https://squareup.com/appointments/buyer/widget/a0eefdc6-1fd1-45c3-896c-4cb83b5e7550/WPQDGP4CS4ZWG'
+              src={'https://squareup.com/appointments/buyer/widget/' + process.env.GATSBY_SQUARE_APPT_KEY}
              />
           </div>
         </Dialog>
