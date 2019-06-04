@@ -20,13 +20,13 @@ const styles = theme => ({
     width: "100%",
     padding: "30px 15px",
     margin: "0 auto",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       padding: "10px 0px",
     },
   },
   gridItem: {
     padding: "10px",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       padding: "10px 0px",
     },
   },

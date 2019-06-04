@@ -16,7 +16,7 @@ const styles = theme => ({
   cartButton: {
     position: "fixed",
     right: 15,
-    bottom: 70,
+    bottom: 50,
     zIndex: 1000,
   },
   headerText: {

@@ -82,7 +82,7 @@ const ProductGrid = props => {
   return (
     <Grid style={{ maxWidth: "1024px", margin: '0 auto', padding: '30px 15px' }} justify="center" container>
       {data.allShopifyProduct.edges.map((item, index) => (
-        <Grid className={classes.gridItem} item xs={12} sm={4} key={index}>
+        <Grid className={classes.gridItem} item xs={12} sm={6} md={4} key={index}>
           <Paper style={{ padding: 15, height: "100%" }}>
             <Link
               className={classes.link}
