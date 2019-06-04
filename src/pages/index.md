@@ -11,11 +11,11 @@ intro:
   avatar: /images/001-nail-polish.svg
   blurbs:
     - image: /images/minimalist-coral-3-.jpg
-      text: Ombre
+      text: Minimalist Coral
     - image: /images/pink-glitter-nails-1-.jpg
-      text: Acrylic
+      text: Pink Glitter
     - image: /images/blue-daisy-flower-nail-art-2-.jpg
-      text: Swarowski
+      text: Blue Daisy Flower
   heading: Featured Nail Arts
 services:
   - description: >-
