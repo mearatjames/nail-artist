@@ -18,7 +18,8 @@ const styles = theme => ({
     zIndex: 1000,
   },
   productPage: {
-    paddingTop: 45,
+    padding: '40px 0px',
+
   }
 })
 
