@@ -17,6 +17,9 @@ const styles = theme => ({
     bottom: 70,
     zIndex: 1000,
   },
+  productPage: {
+    paddingTop: 45,
+  }
 })
 
 const ProductPage = props => {
@@ -25,7 +28,7 @@ const ProductPage = props => {
   const { lineItems } = context.checkout
   const product = props.data.shopifyProduct
   return (
-    <div>
+    <div className={classes.productPage}>
       <ProductForm product={product} />
       <Link style={{ textDecoration: "none" }} to="/shop/cart">
         <Badge

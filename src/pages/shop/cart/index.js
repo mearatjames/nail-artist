@@ -5,6 +5,7 @@ import List from "@material-ui/core/List"
 import { withStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
+import sadIcon from '../../../images/sad-shopping-cart.svg'
 
 const styles = theme => ({
   root: {
@@ -27,9 +28,9 @@ const styles = theme => ({
     margin: "0 0 0 auto",
   },
   checkout: {
-    display: 'flex',
-    justifyContent: 'flex-end'
-  }
+    display: "flex",
+    justifyContent: "flex-end",
+  },
 })
 
 const Cart = props => {
@@ -47,43 +48,57 @@ const Cart = props => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h3" gutterBottom={true} >Here's what's in your cart.</Typography>
-      <List>{line_items}</List>
-      <div className={classes.total}>
-        <Typography inline={true} variant="body1">
-          Subtotal
+      {console.log(checkout.lineItems)}
+      {checkout.lineItems.length === 0 ? (
+        <div>
+        <img width='200px' src={sadIcon} alt='Sad Shopping Cart' />
+        <Typography variant="h3" gutterBottom={true}>
+          You have nothing in your cart
         </Typography>
-        <Typography align="right" inline={true} variant="body1">
-          $ {checkout.subtotalPrice}
-        </Typography>
-      </div>
-      <div className={classes.total}>
-        <Typography inline={true} variant="body1">
-          Taxes (calculated upon checkout)
-        </Typography>
-        <Typography align="right" inline={true} variant="body1">
-          $ {checkout.totalTax}
-        </Typography>
-      </div>
-      <div className={classes.total}>
-        <Typography inline={true} variant="h6">
-          Total
-        </Typography>
-        <Typography align="right" inline={true} variant="h6">
-          $ {checkout.totalPrice}
-        </Typography>
-      </div>
-      <div  className={classes.checkout}>
-      <Button
-        color="primary"
-        variant="contained"
-        size="large"
-        type="submit"
-        onClick={handleCheckout}
-      >
-        Checkout
-      </Button>
-      </div>
+        </div>
+      ) : (
+        <React.Fragment>
+          <Typography variant="h3" gutterBottom={true}>
+            Here's what's in your cart.
+          </Typography>
+          <List>{line_items}</List>
+          <div className={classes.total}>
+            <Typography inline={true} variant="body1">
+              Subtotal
+            </Typography>
+            <Typography align="right" inline={true} variant="body1">
+              $ {checkout.subtotalPrice}
+            </Typography>
+          </div>
+          <div className={classes.total}>
+            <Typography inline={true} variant="body1">
+              Taxes (calculated upon checkout)
+            </Typography>
+            <Typography align="right" inline={true} variant="body1">
+              $ {checkout.totalTax}
+            </Typography>
+          </div>
+          <div className={classes.total}>
+            <Typography inline={true} variant="h6">
+              Total
+            </Typography>
+            <Typography align="right" inline={true} variant="h6">
+              $ {checkout.totalPrice}
+            </Typography>
+          </div>
+          <div className={classes.checkout}>
+            <Button
+              color="primary"
+              variant="contained"
+              size="large"
+              type="submit"
+              onClick={handleCheckout}
+            >
+              Checkout
+            </Button>
+          </div>
+        </React.Fragment>
+      )}
     </div>
   )
 }
