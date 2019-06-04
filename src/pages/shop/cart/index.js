@@ -48,7 +48,6 @@ const Cart = props => {
 
   return (
     <div className={classes.root}>
-      {console.log(checkout.lineItems)}
       {checkout.lineItems.length === 0 ? (
         <div>
         <img width='200px' src={sadIcon} alt='Sad Shopping Cart' />
