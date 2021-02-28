@@ -30,7 +30,7 @@ module.exports = {
         // Storefront API".
         // See: https://help.shopify.com/api/custom-storefronts/storefront-api/getting-started#authentication
         accessToken: `${process.env.GATSBY_SHOPIFY_ACCESS_TOKEN}`,
-
+        apiVersion: "2021-01",
         // Set verbose to true to display a verbose output on `npm run develop`
         // or `npm run build`. This prints which nodes are being fetched and how
         // much time was required to fetch and process the data.
@@ -80,7 +80,12 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        checkSupportedExtensions: false,
+      }
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -121,9 +126,6 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
     },
     'gatsby-plugin-netlify',
     // this (optional) plugin enables Progressive Web App + Offline functionality
